@@ -73,7 +73,7 @@ class HeroSection extends Component {
               <FaSearch className="text-blue" />
             </div>
           </div>
-          <div className="flex flex-row justify-between items-center">
+          <div className="w-2/5 flex flex-row justify-between items-center">
             <img src={Ritter} alt="Ritter" />
             <img src={Adidas} alt="Adidas" />
             <img src={Nike} alt="Nike" />
