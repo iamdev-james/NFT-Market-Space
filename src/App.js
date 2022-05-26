@@ -15,7 +15,7 @@ class App extends Component {
 
   render () {
     return (
-      <main>
+      <main className="overflow-x-hidden">
         <Header />
         <HomePage />
       </main>

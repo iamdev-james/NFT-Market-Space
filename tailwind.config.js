@@ -12,7 +12,8 @@ module.exports = {
         primary: '#7780A1'
       },
       fontSize: {
-        '10xl': '99px'
+        '10xl': '99px',
+        '9xl': '64px'
       },
       maxWidth: {
         'header': '1600px',
