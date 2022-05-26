@@ -12,7 +12,7 @@ module.exports = {
         primary: '#7780A1'
       },
       fontSize: {
-        '10xl': '99px',
+        '10xl': '98px',
         '9xl': '64px'
       },
       maxWidth: {
@@ -23,7 +23,8 @@ module.exports = {
         'primary':'798px'
       },
       height: {
-        'header': '10vh'
+        'header': '10vh',
+        'footer': '450px'
       },
       padding: {
         '80': '12px',
@@ -33,7 +34,8 @@ module.exports = {
         'header-btn': '12px'
       },
       borderColor: {
-        primary: '#7780A1'
+        primary: '#7780A1',
+        secondary: '#F1F1F1'
       },
       boxShadow: {
         primary: '#0607141A'

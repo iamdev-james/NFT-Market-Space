@@ -6,6 +6,8 @@ import { Component } from 'react';
 import HomePage from './pages/homepage/homepage'
 // Header
 import Header from './layouts/Header/Header'
+// Footer
+import Footer from './layouts/Footer/Footer'
 
 class App extends Component {
   constructor () {
@@ -18,6 +20,7 @@ class App extends Component {
       <main className="overflow-x-hidden">
         <Header />
         <HomePage />
+        <Footer />
       </main>
     )
   }

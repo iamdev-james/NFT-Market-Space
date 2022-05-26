@@ -61,7 +61,8 @@ class HeroSection extends Component {
                 outline: 'none',
               }} className="w-1/2 h-full" />
               <select style={{
-                borderLeft: '2px solid #7780A1'
+                borderLeft: '2px solid #7780A1',
+                outline: 'none'
               }} className="text-primary h-1/3 pl-6"> 
                 <option>Category</option>
                 <option>NFT</option>
@@ -70,7 +71,7 @@ class HeroSection extends Component {
                 <option>Tech</option>
                 <option>Innovation</option>
               </select>
-              <FaSearch className="text-blue" />
+              <FaSearch className="text-blue-800 text-2xl cursor-pointer" />
             </div>
           </div>
           <div className="w-2/5 flex flex-row justify-between items-center">
