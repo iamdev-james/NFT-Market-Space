@@ -11,10 +11,10 @@ function Header () {
         </div>
         <div className='w-1/3'>
           <nav className='w-full text-lg font-medium text-primary flex flex-row justify-between items-center'>
-            <nav-item>Auctions</nav-item>
-            <nav-item>Roadmap</nav-item>
-            <nav-item>Discover</nav-item>
-            <nav-item>Community</nav-item>
+            <nav-item className='cursor-pointer'>Auctions</nav-item>
+            <nav-item className='cursor-pointer'>Roadmap</nav-item>
+            <nav-item className='cursor-pointer'>Discover</nav-item>
+            <nav-item className='cursor-pointer'>Community</nav-item>
           </nav>
         </div>
         <div className='flex flex-row justify-between items-center'>
