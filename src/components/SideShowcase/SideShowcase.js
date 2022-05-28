@@ -1,4 +1,4 @@
-import Showcase1 from '../../assets/images/Side-showImage.svg'
+import Showcase1 from '../../assets/images/Icon1.svg'
 
 function SideShowcase () {
   return (

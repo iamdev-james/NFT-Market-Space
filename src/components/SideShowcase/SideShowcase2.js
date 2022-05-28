@@ -1,4 +1,4 @@
-import Showcase2 from '../../assets/images/ShowcaseImage.svg'
+import Showcase2 from '../../assets/images/logo.svg'
 import Icon2 from '../../assets/images/Icon2.svg'
 import Icon1 from '../../assets/images/Icon1.svg'
 
