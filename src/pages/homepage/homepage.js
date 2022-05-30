@@ -9,6 +9,7 @@ const Showcase1 = React.lazy(()=> import('../../components/SideShowcase/SideShow
 const LiveAuction = React.lazy(()=> import('../../components/NFTPages/LiveAuctions'));
 const Showcase2 = React.lazy(()=> import('../../components/SideShowcase/SideShowcase2'));
 const HotSales = React.lazy(()=> import('../../components/NFTPages/HotSales'));
+const PopularSales = React.lazy(()=> import('../../components/NFTPages/MostPopularSales'));
 
 class Home extends Component {
   constructor () {
@@ -19,9 +20,8 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    axios.get('https://testnets-api.opensea.io/wyvern/v1/orders?bundled=false&include_bundled=false&side=1&limit=50&offset=0&order_by=created_date&order_direction=desc')
+    axios.get('https://testnets-api.opensea.io/wyvern/v1/orders?bundled=false&include_bundled=false&side=1&limit=20&offset=0&order_by=created_date&order_direction=desc')
       .then( res => {
-        console.log(res.data.orders)
         this.setState({NFTs: res.data.orders})
       })
       .catch(err => {
@@ -33,10 +33,10 @@ class Home extends Component {
     <div className="overflow-x-hidden">
       <HeroSection />
       <Suspense fallback={<div>Loading...</div>}>
-        <Showcase1 />
+        <LiveAuction NFTs={this.state.NFTs} />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
-        <LiveAuction />
+        <Showcase1 />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Showcase2 />
@@ -44,15 +44,9 @@ class Home extends Component {
       <Suspense fallback={<div>Loading...</div>}>
         <HotSales />
       </Suspense>
-      <div>
-        {this.state.NFTs.map(Item => {
-          return (
-            <div key={Item.id}>
-              <img src={Item.asset.image_url} alt={Item.asset.name} />
-            </div>
-          )
-        })}
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <PopularSales />
+      </Suspense>
     </div>
     )
   }

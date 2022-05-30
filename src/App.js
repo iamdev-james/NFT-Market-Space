@@ -1,6 +1,10 @@
 import './App.css';
 import { Component } from 'react';
 
+// CSS files for carousel
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 // Pages to be used
 // Home Page
 import HomePage from './pages/homepage/homepage'

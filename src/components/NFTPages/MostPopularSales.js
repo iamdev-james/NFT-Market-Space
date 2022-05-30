@@ -1,11 +1,5 @@
-import { Component } from "react";
+const PopularSales = props => (
+  <div className="mt-24">PopularSales</div>
+)
 
-class PopularNFTSales extends Component {
-  render () {
-    return (
-      <div>Popular NFT Sales</div>
-    )
-  }
-}
-
-export default PopularNFTSales;
+export default PopularSales;
