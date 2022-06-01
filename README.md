@@ -1,10 +1,16 @@
-#NFT Market Space Demo
+# NFT Market Space Demo
+
+This is just a demo project for an NFT market space with some cool features
 
 ![Banner](.github/files/Header.png)
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the dependencies used in the app.\
 
 ### `npm start`
 
