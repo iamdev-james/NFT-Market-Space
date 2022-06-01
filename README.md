@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+#NFT Market Space Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Banner](.github/files/banner.png)
 
 ## Available Scripts
 
