@@ -1,8 +1,8 @@
-import Showcase1 from '../../assets/images/Side-showImage.svg'
+import Showcase1 from '../../assets/images/Icon1.svg'
 
 function SideShowcase () {
   return (
-    <main className='max-w-body overflow-x-hidden flex flex-row justify-start items-center mt-20 px-20'>
+    <main className='max-w-body overflow-x-hidden flex flex-row justify-start items-center mt-24 px-20'>
       <div className='flex-1 order-1 h-full flex flex-col justify-around items-start pr-48'>
         <div className='mb-8'>
           <p className="text-primary text-lg">OVERLINE</p>

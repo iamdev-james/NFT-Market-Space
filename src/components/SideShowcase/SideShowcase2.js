@@ -1,10 +1,10 @@
-import Showcase2 from '../../assets/images/ShowcaseImage.svg'
+import Showcase2 from '../../assets/images/logo.svg'
 import Icon2 from '../../assets/images/Icon2.svg'
 import Icon1 from '../../assets/images/Icon1.svg'
 
 function SideShowcase2 () {
   return (
-    <main className='max-w-body overflow-x-hidden flex flex-row justify-end items-center mt-20 px-20'>
+    <main className='max-w-body overflow-x-hidden flex flex-row justify-end items-center mt-24 px-20'>
       <div className='flex-1 order-2 h-full flex flex-col justify-around items-start pl-48'>
         <div className='mb-8'>
           <p className="text-primary text-lg">OVERLINE</p>

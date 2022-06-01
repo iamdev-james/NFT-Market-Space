@@ -1,6 +1,6 @@
 function ShowCase4 () {
   return (
-    <div> ShowCase 4</div>
+    <div className="mt-24"> ShowCase 4</div>
   )
 }
 
