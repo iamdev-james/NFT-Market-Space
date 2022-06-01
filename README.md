@@ -1,6 +1,6 @@
 #NFT Market Space Demo
 
-![Banner](.github/files/banner.png)
+![Banner](.github/files/Header.png)
 
 ## Available Scripts
 
