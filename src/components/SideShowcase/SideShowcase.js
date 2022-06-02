@@ -1,4 +1,3 @@
-import Showcase1 from '../../assets/images/Icon1.svg'
 
 function SideShowcase () {
   return (
@@ -18,7 +17,7 @@ function SideShowcase () {
         </div>
       </div>
       <div className='flex-1 order-2'>
-        <img src={Showcase1} alt="ShowcaseImage" />
+        <img src="https://i.im.ge/2022/06/02/r88EOr.png" alt="ShowcaseImage" />
       </div>
     </main>
   )

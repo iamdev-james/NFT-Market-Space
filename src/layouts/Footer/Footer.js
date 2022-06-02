@@ -14,7 +14,7 @@ function Footer () {
             <img src={Logo} alt="Logo" />
             <p className='text-2xl font-bold ml-2 cursor-pointer'>NFT Market</p>
           </div>
-          <div className='w-3/4 text-primary flex flex-row justify-between items-center'>
+          <div className='w-full pr-8 text-primary flex flex-row justify-between items-center'>
             <p className='cursor-pointer'>Support</p>
             <p className='cursor-pointer'>Terms of service</p>
             <p className='cursor-pointer'>License</p>

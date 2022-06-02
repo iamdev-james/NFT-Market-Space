@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: '#4745D0'
+        primary: '#4745D0',
+        secondary: '#F2F3F6'
       },
       textColor: {
         primary: '#7780A1'
@@ -28,7 +29,8 @@ module.exports = {
       },
       padding: {
         '80': '12px',
-        '81': '24px'
+        '81': '24px',
+        '82': '35px'
       },
       borderRadius: {
         'header-btn': '12px'
