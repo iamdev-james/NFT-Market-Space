@@ -1,7 +1,10 @@
 import { Component } from "react";
 
+// Time formatter to format expiration time
+import Time from 'react-time-format'
+
 // Importing react icons
-// import { BsClockHistory } from 'react-icons/bs'
+import { BsClockHistory } from 'react-icons/bs'
 import { FiHeart } from 'react-icons/fi'
 
 // NFT images to use
@@ -79,10 +82,12 @@ class HotNFTSales extends Component {
       borderRadius: '50%',
       backgroundColor: '#333'
     }
+    // Classes for NFT items in row
     return (
       <main className="max-w-body px-20">
-        <div>
-          <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-row justify-between items-center">
+        {/* Section 1 */}
+          <div className="flex-1">
             <div>
               <p>Checkout the hottest Sale offers</p>
               <div>
@@ -91,12 +96,14 @@ class HotNFTSales extends Component {
               <button>Show me more</button>
             </div>
           </div>
-          <div>
+        {/* Section 2 */}
+          <div className="flex-1">
             <div className="flex flex-row justify-around items-center" style={{
-              borderBottom: '50px solid #555',
+              borderBottom: '35px solid #555',
               borderRight: '25px solid transparent',
+              borderTopLeftRadius: '10px',
               height: '0',
-              width: '125px'
+              width: '85px'
             }}>
               <div style={circleStyle}></div>
               <div style={circleStyle}></div>
@@ -109,25 +116,30 @@ class HotNFTSales extends Component {
               <button>Get started</button>
             </div>
           </div>
-          <div>
-            <div>
-              <p>Top NFTs at lower price</p>
-              <div>
+        {/* Section 3 */}
+            <div className="flex-1 border-2 border-solid border-gray-200 px-8 py-10 rounded-xl">
+              <p className="text-3xl font-bold mb-10">Top NFTs at lower price</p>
+              <div className="h-full">
                 {this.state.HotSales.map(CheapItem => {
                   return (
                     <div key={CheapItem.id}>
-                      <div>
+                      <div className="w-full h-full flex flex-row justify-start items-start my-3">
                         <div>
-                          <img src={ CheapItem.imgUrl } alt={CheapItem.name} />
+                          <img src={ CheapItem.imgUrl } alt={CheapItem.name} className="rounded-lg" />
                         </div>
-                        <div>
-                          <p>{CheapItem.name}</p>
-                          <div>
-                            <div></div>
-                            <div></div>
+                        <div className="h-full w-full flex flex-col justify-between items-start ml-4">
+                          <p className="text-lg font-medium">{CheapItem.name}</p>
+                          <div className="mt-1 font-medium w-full flex flex-row justify-between items-center">
+                            <div className="flex flex-row justify-between items-center">
+                              <BsClockHistory className="mr-3" />
+                              <Time className="mr-2" value={ new Date(CheapItem.expirationTime) } format="mm:ss" />
+                            </div>
+                            <div className="text-core px-2 bg-gray-200 rounded-lg text-blue-600 font-medium">
+                              {CheapItem.biddingPrice} Eth
+                            </div>
                           </div>
-                          <div>
-                            <p>{CheapItem.peopleBidding} people are bidding</p>
+                          <div className="mt-2 w-full flex flex-row justify-between items-center">
+                            <p className="text-sm">{CheapItem.peopleBidding} people are bidding</p>
                             <FiHeart />
                           </div>
                         </div>
@@ -136,9 +148,8 @@ class HotNFTSales extends Component {
                   )
                 })}
               </div>
-              <button>Show me more</button>
+              <button className="w-full mx-4 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200">Show me more</button>
             </div>
-          </div>
         </div>
       </main>
     )
