@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       backgroundColor: {
         primary: '#4745D0',
-        secondary: '#F2F3F6'
+        secondary: '#F2F3F6',
+        darkMode: '#0f0f0f'
       },
       textColor: {
         primary: '#7780A1'
@@ -15,6 +16,9 @@ module.exports = {
       fontSize: {
         '10xl': '98px',
         '9xl': '64px'
+      },
+      zIndex: {
+        '100': '100',
       },
       maxWidth: {
         'header': '1600px',
@@ -28,6 +32,7 @@ module.exports = {
         'footer': '450px'
       },
       padding: {
+        '78': '10px',
         '80': '12px',
         '81': '24px',
         '82': '35px'

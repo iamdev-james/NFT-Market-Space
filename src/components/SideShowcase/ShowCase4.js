@@ -9,7 +9,7 @@ const circleStyle = {
 
 function ShowCase4 () {
   return (
-    <main className="max-w-body px-24 mt-24">
+    <main className="dark:bg-darkMode max-w-body px-24 pt-24">
       <div className="flex flex-col justify-start items-start">
         <div className="flex flex-row justify-start items-center pl-3" style={{
           borderBottom: '30px solid #F2F3F6',

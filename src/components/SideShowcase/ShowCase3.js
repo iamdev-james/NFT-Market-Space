@@ -6,7 +6,7 @@ import wallet from '../../assets/images/showcase3/WalletIcon.svg'
 
 function ShowCase3 () {
   return (
-    <main className='max-w-body px-64 mt-20'>
+    <main className='dark:bg-darkMode max-w-body px-64 pt-20'>
       <div className='flex flex-row justify-between items-center'>
         <div className='flex flex-col justify-between items-center'>
           <img src={ users } alt="users" />

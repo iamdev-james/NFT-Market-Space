@@ -73,17 +73,17 @@ class PopularSales extends Component {
   }
   render () {
     return (
-      <div className="max-w-body px-20 mt-24">
+      <div className="dark:bg-darkMode max-w-body px-20 pt-24">
         <div className="text-center">
           <div>
             <p className="text-primary">OVERLINE</p>
-            <p className="text-3xl font-bold">Most popular live auctions</p>
+            <p className="dark:text-white text-3xl font-bold">Most popular live auctions</p>
           </div>
           <div className="w-2/5 mx-auto my-7 flex flex-row justify-around items-center">
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100">Architecture</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100">Photography</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100">Games</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100">Music</p>
+            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Architecture</p>
+            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Photography</p>
+            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Games</p>
+            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
           </div>
         </div>
         <div className="flex flex-row justify-between items-center">
@@ -98,19 +98,19 @@ class PopularSales extends Component {
                   boxShadow: '0px 0.2px 5px #333'
                 }} />
                 <div className="w-full my-4 flex flex-row justify-between items-center">
-                  <p className="text-core font-bold">{ Item.name }</p>
+                  <p className="dark:text-white text-core font-bold">{ Item.name }</p>
                 </div>
               {/* Expiration and bidding price entry container */}
                 <div className="w-full flex flex-row justify-between items-center">
                 {/* Expiration Time Entry */}
-                  <div className="flex flex-row justify-between items-center text-sm text-gray-700 font-medium">
+                  <div className="flex flex-row justify-between items-center text-sm text-gray-700 font-medium dark:text-white">
                     <BsClockHistory className="mr-1" />
                     <Time className="mr-1 text-sm" value={ new Date(Item.expirationTime) } format="mm:ss" /> left
                   </div>
                 {/* Bidding Price Entry */}
-                  <p className="text-sm px-2 bg-gray-200 rounded-lg text-blue-600 font-medium">{ Item.biddingPrice } Eth</p>
+                  <p className="text-sm px-2 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">{ Item.biddingPrice } Eth</p>
                 </div>
-                <div className="mt-4 mb-1" style={{
+                <div className="mt-4 mb-1 dark:bg-primary" style={{
                   height: '1px',
                   width: '100%',
                   backgroundColor: '#E2E2ED'

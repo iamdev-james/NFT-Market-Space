@@ -88,7 +88,7 @@ class HotNFTSales extends Component {
     }
     // Classes for NFT items in row
     return (
-      <main className="max-w-body px-20 mt-24">
+      <main className="dark:bg-darkMode max-w-body px-20 pt-24">
         <div className="flex flex-row justify-between items-center">
         {/* Section 1 */}
           <div className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl">

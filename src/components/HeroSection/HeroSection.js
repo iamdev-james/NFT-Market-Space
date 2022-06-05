@@ -1,5 +1,8 @@
-import { Component } from "react";
+// import { Component } from "react";
 import { FaSearch } from 'react-icons/fa'
+
+// Use dark hook to get current
+import useDark from '../../hooks/useDark';
 
 // Images to be Used
 import HeroFrame1 from '../../assets/images/heroframe1.svg'
@@ -15,9 +18,13 @@ import Holland from '../../assets/images/herologos/NewHolland.svg'
 import HeroSquares from '../../assets/images/herosquares.svg'
 import LittleCircles from '../../assets/images/HeroLittleCircles.svg'
 import Circles from '../../assets/images/herocircles.svg'
+import BlurredLogo from '../../assets/images/BluredLogo.svg'
+import DarkCircles from '../../assets/images/Darkcircles.svg'
+import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
+import GradientFade from '../../assets/images/GradientFade.svg'
+import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
 
-class HeroSection extends Component {
-  render () {
+function HeroSection() {
     const searchBar = {
       width: '643px',
       height: '84px',
@@ -25,31 +32,39 @@ class HeroSection extends Component {
       boxShadow: '0px 25px 75px rgba(6, 7, 20, 0.1)',
       borderRadius: '16px'  
     }
+    const [colorTheme] = useDark();
     return (
-      <main className="max-w-body overflow-x-hidden">
+      <main className="dark:bg-darkMode max-w-body overflow-x-hidden">
         <img src={HeroSquares} style={{
-          zIndex: '-10'
+          zIndex: '6'
         }} alt="squares" className="absolute top-48" />
-        <img src={LittleCircles} style={{
-          zIndex: '-50'
+        <img src={colorTheme === 'light'? DarkLittleCircles : LittleCircles} style={{
+          zIndex: '4'
         }} alt="squares" className="absolute" />
-        <img src={Circles} style={{
-          zIndex: '-100'
+        <img src={BlurredLogo} style={{
+          zIndex: '8'
         }} alt="squares" className="absolute" />
-        <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center">
-          <div className="h-3/5 flex flex-col justify-between items-center">
+        <img src={colorTheme === 'light'? DarkGradientFade : GradientFade} style={{
+          zIndex: '8',
+          bottom: '-29%'
+        }} alt="squares" className="absolute" />
+        <img src={colorTheme === 'light'? DarkCircles : Circles} style={{
+          zIndex: '2'
+        }} alt="squares" className="absolute" />
+        <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center mt-32">
+          <div className="h-3/5 flex flex-col justify-between items-center z-100">
             <div className="flex flex-col justify-between items-center">
               <div>
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="flex flex-row justify-end items-center">
-                  <p className="text-10xl font-bold">A new NFT</p>
+                  <p className="text-10xl font-bold dark:text-white">A new NFT</p>
                   <img src={HeroFrame1} alt='Frame1' />
                 </div>
                 <div className="flex flex-row justify-start items-center -mt-10 ml-16">
                   <img src={HeroFrame2} alt="Frame2" />
-                  <p className="text-10xl font-bold">Experience</p>
+                  <p className="dark:text-white text-10xl font-bold">Experience</p>
                 </div>
               </div>
               <div>
@@ -74,7 +89,7 @@ class HeroSection extends Component {
               <FaSearch className="text-blue-800 text-2xl cursor-pointer" />
             </div>
           </div>
-          <div className="w-2/5 flex flex-row justify-between items-center mt-16">
+          <div className="w-2/5 flex flex-row justify-between items-center mt-16 z-100">
             <img src={Ritter} alt="Ritter" />
             <img src={Adidas} alt="Adidas" />
             <img src={Nike} alt="Nike" />
@@ -84,6 +99,5 @@ class HeroSection extends Component {
       </main>
     )
   }
-}
 
 export default HeroSection;

@@ -7,7 +7,7 @@ import { FaInstagram } from 'react-icons/fa'
 
 function Footer () {
   return (
-    <main className='max-w-header h-footer py-12 px-20 mt-20'>
+    <main className='dark:bg-darkMode max-w-header h-footer py-12 px-20 pt-20'>
       <div className='h-full flex flex-row justify-between items-center border-2 border-solid border-secondary rounded-2xl'>
         <div className='flex-1 py-10 h-full flex flex-col justify-between items-start pl-10'>
           <div className='flex flex-row justify-start items-center'>
