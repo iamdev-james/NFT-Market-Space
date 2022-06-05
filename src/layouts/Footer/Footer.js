@@ -7,14 +7,14 @@ import { FaInstagram } from 'react-icons/fa'
 
 function Footer () {
   return (
-    <main className='max-w-header h-footer py-12 px-20 mt-20'>
+    <main className='dark:bg-darkMode max-w-header h-footer py-12 px-20 pt-20'>
       <div className='h-full flex flex-row justify-between items-center border-2 border-solid border-secondary rounded-2xl'>
         <div className='flex-1 py-10 h-full flex flex-col justify-between items-start pl-10'>
           <div className='flex flex-row justify-start items-center'>
             <img src={Logo} alt="Logo" />
             <p className='text-2xl font-bold ml-2 cursor-pointer'>NFT Market</p>
           </div>
-          <div className='w-3/4 text-primary flex flex-row justify-between items-center'>
+          <div className='w-full pr-8 text-primary flex flex-row justify-between items-center'>
             <p className='cursor-pointer'>Support</p>
             <p className='cursor-pointer'>Terms of service</p>
             <p className='cursor-pointer'>License</p>

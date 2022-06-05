@@ -22,8 +22,8 @@ let settings = {
 };
 
 const LiveAuction = props => (
-	<div className="max-w-body mt-48">
-    <p className="text-center text-3xl font-bold mb-12">Latest live auctions</p>
+	<div className="dark:bg-darkMode max-w-body pt-48">
+    <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
     <Slider {...settings}>
       {props.NFTs.map(Item => {
         return (

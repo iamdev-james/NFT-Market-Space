@@ -13,6 +13,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-time-format": "0.0.5",
+    "react-toggle-dark-mode": "^1.0.4",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

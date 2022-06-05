@@ -10,6 +10,8 @@ const LiveAuction = React.lazy(()=> import('../../components/NFTPages/LiveAuctio
 const Showcase2 = React.lazy(()=> import('../../components/SideShowcase/SideShowcase2'));
 const HotSales = React.lazy(()=> import('../../components/NFTPages/HotSales'));
 const PopularSales = React.lazy(()=> import('../../components/NFTPages/MostPopularSales'));
+const Showcase3 = React.lazy(()=> import('../../components/SideShowcase/ShowCase3'));
+const Showcase4 = React.lazy(()=> import('../../components/SideShowcase/ShowCase4'));
 
 class Home extends Component {
   constructor () {
@@ -39,13 +41,31 @@ class Home extends Component {
         <Showcase1 />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
-        <Showcase2 />
-      </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
         <HotSales />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
+        <Showcase2 />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="mt-8" style={{
+          height: '1px',
+          width: '100%',
+          backgroundColor: '#E2E2ED'
+        }}>
+        </div>
         <PopularSales />
+        <div className="mt-8" style={{
+          height: '1px',
+          width: '100%',
+          backgroundColor: '#E2E2ED'
+        }}>
+        </div>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Showcase3 />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Showcase4 />
       </Suspense>
     </div>
     )
