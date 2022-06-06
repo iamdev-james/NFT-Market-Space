@@ -8,7 +8,7 @@ module.exports = {
       backgroundColor: {
         primary: '#4745D0',
         secondary: '#F2F3F6',
-        darkMode: '#0f0f0f'
+        darkMode: '#000B18'
       },
       textColor: {
         primary: '#7780A1'
@@ -16,6 +16,9 @@ module.exports = {
       fontSize: {
         '10xl': '98px',
         '9xl': '64px'
+      },
+      borderWidth: {
+        '2': '0.5px'
       },
       zIndex: {
         '100': '100',

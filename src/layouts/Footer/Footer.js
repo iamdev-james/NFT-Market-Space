@@ -12,7 +12,7 @@ function Footer () {
         <div className='flex-1 py-10 h-full flex flex-col justify-between items-start pl-10'>
           <div className='flex flex-row justify-start items-center'>
             <img src={Logo} alt="Logo" />
-            <p className='text-2xl font-bold ml-2 cursor-pointer'>NFT Market</p>
+            <p className='text-2xl font-bold ml-2 cursor-pointer dark:text-white'>NFT Market</p>
           </div>
           <div className='w-full pr-8 text-primary flex flex-row justify-between items-center'>
             <p className='cursor-pointer'>Support</p>
@@ -24,17 +24,17 @@ function Footer () {
           <div className='w-full'>
             <div style={{
               lineHeight: '1.9'
-            }} className='text-lg font-bold mb-6'>
+            }} className='text-lg font-bold mb-6 dark:text-white'>
               <p className='cursor-pointer'>Auctions</p>
               <p className='cursor-pointer'>Roadmap</p>
               <p className='cursor-pointer'>Discover</p>
               <p className='cursor-pointer'>Community</p>
             </div>
             <div>
-              <button className='py-80 px-81 bg-primary rounded-header-btn text-lg text-white font-medium'>My account</button>
+              <button className='py-78 px-81 bg-primary rounded-header-btn text-lg text-white font-medium'>My account</button>
             </div>
           </div>
-          <div className="w-1/2 text-xl flex flex-row justify-between items-center text-gray-400">
+          <div className="w-2/3 text-xl flex flex-row justify-between items-center text-gray-400">
             <FaFacebookSquare className='cursor-pointer' />
             <FaLinkedinIn className='cursor-pointer' />
             <FaGithub className='cursor-pointer' />

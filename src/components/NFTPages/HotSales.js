@@ -91,22 +91,22 @@ class HotNFTSales extends Component {
       <main className="dark:bg-darkMode max-w-body px-20 pt-24">
         <div className="flex flex-row justify-between items-center">
         {/* Section 1 */}
-          <div className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl">
+          <div className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl dark:border-gray-700">
             <div className=" h-full flex flex-col justify-between items-start">
-              <p className="text-3xl font-bold mb-8 mr-20">Checkout the hottest Sale offers</p>
+              <p className="text-3xl font-bold mb-8 mr-20 dark:text-white">Checkout the hottest Sale offers</p>
               <div className="w-full h-1/2 flex flex-row justify-between items-center">
                 {this.state.HottestSales.map(Hottest => {
                   return (
                     <div key={Hottest.id}>
                       <div className="mr-4">
                         <img src={Hottest.imgUrl} alt={Hottest.id} className="rounded-lg" />
-                        <p className="text-lg font-medium my-1">{Hottest.name}</p>
+                        <p className="text-lg font-medium my-1 dark:text-white">{Hottest.name}</p>
                         <div className="w-full flex flex-row justify-between items-center">
-                          <div className="flex flex-row items-center font-medium">
+                          <div className="flex flex-row items-center font-medium dark:text-primary">
                             <BsClockHistory className="mr-2" />
                             <Time className="mr-2" value={ new Date(Hottest.expirationTime) } format="mm:ss" />
                           </div>
-                          <div className="text-core px-2 bg-gray-200 rounded-lg text-blue-600 font-medium">
+                          <div className="text-core px-2 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">
                             {Hottest.biddingPrice} Eth
                           </div>
                         </div>
@@ -125,7 +125,7 @@ class HotNFTSales extends Component {
                   )
                 })}
               </div>
-              <button className="w-11/12 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200">Show me more</button>
+              <button className="w-11/12 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-900 dark:border-gray-700">Show me more</button>
             </div>
           </div>
         {/* Section 2 */}
@@ -153,8 +153,8 @@ class HotNFTSales extends Component {
             </div>
           </div>
         {/* Section 3 */}
-            <div className="flex-1 border-2 border-solid border-gray-200 px-5 py-10 rounded-xl">
-              <p className="text-3xl font-bold mb-10">Top NFTs at lower price</p>
+            <div className="flex-1 border-2 border-solid border-gray-200 px-5 py-10 rounded-xl dark:border-gray-700">
+              <p className="text-3xl font-bold mb-10 dark:text-white">Top NFTs at lower price</p>
               <div className="h-full">
                 {this.state.HotSales.map(CheapItem => {
                   return (
@@ -164,13 +164,13 @@ class HotNFTSales extends Component {
                           <img src={ CheapItem.imgUrl } alt={CheapItem.name} className="rounded-lg" />
                         </div>
                         <div className="h-full w-full flex flex-col justify-between items-start ml-4">
-                          <p className="text-lg font-medium">{CheapItem.name}</p>
+                          <p className="text-lg font-medium dark:text-white">{CheapItem.name}</p>
                           <div className="mt-1 font-medium w-full flex flex-row justify-between items-center">
-                            <div className="flex flex-row justify-between items-center">
+                            <div className="flex flex-row justify-between items-center dark:text-primary">
                               <BsClockHistory className="mr-3" />
                               <Time className="mr-2" value={ new Date(CheapItem.expirationTime) } format="mm:ss" />
                             </div>
-                            <div className="text-core px-2 bg-gray-200 rounded-lg text-blue-600 font-medium">
+                            <div className="text-core px-2 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">
                               {CheapItem.biddingPrice} Eth
                             </div>
                           </div>
@@ -184,7 +184,7 @@ class HotNFTSales extends Component {
                   )
                 })}
               </div>
-              <button className="w-11/12 ml-2 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200">Show me more</button>
+              <button className="w-11/12 ml-2 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Show me more</button>
             </div>
         </div>
       </main>
