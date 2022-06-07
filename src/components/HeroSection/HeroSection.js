@@ -24,15 +24,13 @@ import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
 
 function HeroSection() {
     const searchBar = {
-      width: '643px',
-      height: '84px',
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 25px 75px rgba(6, 7, 20, 0.1)',
       borderRadius: '16px'  
     }
     const [colorTheme] = useDark();
     return (
-      <main className="bg-Circles dark:bg-darkCircles max-w-body overflow-x-hidden dark:bg-darkMode" style={{
+      <main className="bg-Circles dark:bg-darkCircles w-screen md:w-full max-w-body overflow-x-hidden dark:bg-darkMode" style={{
         'backgroundPosition': 'center center'
       }}>
         {/* <div className='h-1/3 bg-Gradient dark:bg-DarkGradient absolute' style={{
@@ -40,7 +38,7 @@ function HeroSection() {
         }}></div> */}
         <img src={HeroSquares} style={{
           zIndex: '6'
-        }} alt="squares" className="absolute top-48" />
+        }} alt="squares" className="absolute top-48 hidden md:inline" />
         <img src={colorTheme === 'light'? DarkLittleCircles : LittleCircles} style={{
           zIndex: '4'
         }} alt="squares" className="absolute" />
@@ -58,20 +56,20 @@ function HeroSection() {
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="flex flex-row justify-end items-center">
-                  <p className="text-10xl font-bold dark:text-white">A new NFT</p>
-                  <img src={HeroFrame1} alt='Frame1' />
+                <div className="flex flex-row justify-end items-center mb-12">
+                  <p className="lg:text-10xl md:text-6xl text-5xl font-bold dark:text-white">A new NFT</p>
+                  <img src={HeroFrame1} alt='Frame1' className='scale-50 lg:scale-100' />
                 </div>
-                <div className="flex flex-row justify-start items-center -mt-10 ml-16">
-                  <img src={HeroFrame2} alt="Frame2" />
-                  <p className="dark:text-white text-10xl font-bold">Experience</p>
+                <div className="flex flex-row justify-start items-center my-10 -mt-10 md:ml-16">
+                  <img src={HeroFrame2} alt="Frame2" className='scale-50 lg:scale-100' />
+                  <p className="dark:text-white lg:text-10xl md:text-6xl text-5xl font-bold">Experience</p>
                 </div>
               </div>
               <div>
                 <p className="text-primary text-lg">Discover, collect and sell</p>
               </div>
             </div>
-            <div style={searchBar} className="text-lg w-64 flex flex-row justify-around items-center">
+            <div style={searchBar} className="msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center">
               <input type="search" placeholder="Items, collections and creators" style={{
                 outline: 'none',
               }} className="w-1/2 h-full" />

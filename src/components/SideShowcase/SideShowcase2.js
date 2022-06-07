@@ -1,5 +1,6 @@
-import Icon2 from '../../assets/images/Icon2.svg'
-import Icon1 from '../../assets/images/Icon1.svg'
+// Icons to be used
+import { FaPalette } from 'react-icons/fa'
+import { FaArtstation } from 'react-icons/fa'
 
 function SideShowcase2 () {
   return (
@@ -15,14 +16,14 @@ function SideShowcase2 () {
         <p className='text-primary mb-8 text-lg pr-12'>Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor pulvinar ultricies dolor feugiat aliquam commodo.</p>
         <div className='flex flex-row justify-start items-center'>
           <div className="flex flex-col justify-start items-start">
-            <img src={Icon1} alt='Icon1' className='dark:text-white' />
+          <FaArtstation className='dark:text-white text-3xl' />
             <div className='mt-6'>
               <p className='text-lg font-bold dark:text-white'>Sollicitudin sapien</p>
               <p className='text-primary'>Cursus fermentum</p>
             </div>
           </div>
           <div className="flex flex-col justify-start items-start ml-8">
-          <img src={Icon2} alt='Icon1' className='dark:text-white' />
+          <FaPalette className='dark:text-white text-3xl' />
             <div className='mt-6'>
               <p className='text-lg font-bold dark:text-white'>Pulvinar metus</p>
               <p className='text-primary'>Nunc sed</p>

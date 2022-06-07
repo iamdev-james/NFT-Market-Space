@@ -110,10 +110,9 @@ class PopularSales extends Component {
                 {/* Bidding Price Entry */}
                   <p className="text-sm px-2 bg-gray-200 rounded text-blue-600 font-medium dark:bg-gray-900">{ Item.biddingPrice } Eth</p>
                 </div>
-                <div className="mt-4 mb-1 dark:bg-primary" style={{
+                <div className="mt-4 mb-1 bg-[#E2E2ED] dark:bg-gray-800" style={{
                   height: '1px',
-                  width: '100%',
-                  backgroundColor: '#E2E2ED'
+                  width: '100%'
                 }}>
                 </div>
                 <div className="w-full flex flex-row justify-between items-center">

@@ -42,10 +42,9 @@ const LiveAuction = props => (
               <div className="flex flex-row justify-start items-center font-medium dark:text-primary">
                 <BsClockHistory className="mr-3" /> <Time className="mr-2" value={ new Date(Item.expiration_time) } format="hh:mm:ss" /> left
               </div>
-              <div className="mt-8 mb-3" style={{
+              <div className="mt-8 mb-3 bg-[#E2E2ED] dark:bg-gray-800" style={{
                 height: '1px',
-                width: '100%',
-                backgroundColor: '#E2E2ED'
+                width: '100%'
               }}>
               </div>
               <div className="w-full flex flex-row justify-between items-center">

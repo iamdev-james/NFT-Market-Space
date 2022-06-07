@@ -1,10 +1,8 @@
 // Icon Images to be used 
-import users from '../../assets/images/showcase3/UserIcon.svg'
-import artiste from '../../assets/images/showcase3/ArtistsIcon.svg'
-import artworks from '../../assets/images/showcase3/ArtworksIcon.svg'
-import wallet from '../../assets/images/showcase3/WalletIcon.svg'
-
-import {  } from 'react-icons/fa'
+import { FaUserCircle } from 'react-icons/fa'
+import { FaBook } from 'react-icons/fa'
+import { FaPalette } from 'react-icons/fa'
+import { FaArtstation } from 'react-icons/fa'
 
 
 function ShowCase3 () {
@@ -12,22 +10,22 @@ function ShowCase3 () {
     <main className='dark:bg-darkMode max-w-body px-64 pt-20'>
       <div className='flex flex-row justify-between items-center'>
         <div className='flex flex-col justify-between items-center'>
-          <img src={ users } alt="users" />
+          <FaUserCircle className='dark:text-white text-3xl my-2' />
           <p className='text-4xl font-bold dark:text-white'>300k</p>
           <p className='text-primary text-sm mt-1'>Users Active</p>
         </div>
         <div className='flex flex-col justify-between items-center'>
-          <img src={ artworks } alt="artworks" />
+          <FaArtstation className='dark:text-white text-3xl my-2' />
           <p className='text-4xl font-bold dark:text-white'>52,5k</p>
           <p className='text-primary text-sm mt-1'>Artworks</p>
         </div>
         <div className='flex flex-col justify-between items-center'>
-          <img src={ artiste } alt="artiste" className='text-white' />
+          <FaPalette className='dark:text-white text-3xl my-2' />
           <p className='text-4xl font-bold dark:text-white'>17,5k</p>
           <p className='text-primary text-sm mt-1'>Artists</p>
         </div>
         <div className='flex flex-col justify-between items-center'>
-          <img src={ wallet } alt="wallet" />
+          <FaBook className='dark:text-white text-3xl my-2' />
           <p className='text-4xl font-bold dark:text-white'>35.58</p>
           <p className='text-primary text-sm mt-1'>ETH Spent</p>
         </div>

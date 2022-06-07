@@ -110,10 +110,9 @@ class HotNFTSales extends Component {
                             {Hottest.biddingPrice} Eth
                           </div>
                         </div>
-                        <div className="m-1" style={{
+                        <div className="m-1 bg-[#E2E2ED] dark:bg-gray-800" style={{
                           height: '1px',
-                          width: '100%',
-                          backgroundColor: '#E2E2ED'
+                          width: '100%'
                         }}>
                         </div>
                         <div className="text-primary flex flex-row justify-between items-center">
