@@ -10,6 +10,12 @@ module.exports = {
         secondary: '#F2F3F6',
         darkMode: '#000B18'
       },
+      backgroundImage: {
+        'darkCircles': "url('/src/assets/images/Darkcircles.svg')",
+        'Circles': "url('/src/assets/images/herocircles.svg')",
+        'Gradient': "url('/src/assets/images/GradientFade.svg')",
+        'DarkGradient': "url('/src/assets/images/DarkGradientFade.svg')"
+      },
       textColor: {
         primary: '#7780A1'
       },

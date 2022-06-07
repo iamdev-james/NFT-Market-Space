@@ -17,12 +17,10 @@ import Holland from '../../assets/images/herologos/NewHolland.svg'
 // Showcase Hero 
 import HeroSquares from '../../assets/images/herosquares.svg'
 import LittleCircles from '../../assets/images/HeroLittleCircles.svg'
-import Circles from '../../assets/images/herocircles.svg'
 import BlurredLogo from '../../assets/images/BluredLogo.svg'
-import DarkCircles from '../../assets/images/Darkcircles.svg'
 import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
-import GradientFade from '../../assets/images/GradientFade.svg'
-import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
+// import GradientFade from '../../assets/images/GradientFade.svg'
+// import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
 
 function HeroSection() {
     const searchBar = {
@@ -34,7 +32,12 @@ function HeroSection() {
     }
     const [colorTheme] = useDark();
     return (
-      <main className="dark:bg-darkMode max-w-body overflow-x-hidden">
+      <main className="bg-Circles dark:bg-darkCircles max-w-body overflow-x-hidden dark:bg-darkMode" style={{
+        'backgroundPosition': 'center center'
+      }}>
+        {/* <div className='h-1/3 bg-Gradient dark:bg-DarkGradient absolute' style={{
+          // bottom: '-29%'
+        }}></div> */}
         <img src={HeroSquares} style={{
           zIndex: '6'
         }} alt="squares" className="absolute top-48" />
@@ -44,13 +47,10 @@ function HeroSection() {
         <img src={BlurredLogo} style={{
           zIndex: '8'
         }} alt="squares" className="absolute" />
-        <img src={colorTheme === 'light'? DarkGradientFade : GradientFade} style={{
+        {/* <img src={colorTheme === 'light'? DarkGradientFade : GradientFade} style={{
           zIndex: '8',
           bottom: '-29%'
-        }} alt="squares" className="absolute" />
-        <img src={colorTheme === 'light'? DarkCircles : Circles} style={{
-          zIndex: '2'
-        }} alt="squares" className="absolute" />
+        }} alt="squares" className="absolute" /> */}
         <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center mt-32">
           <div className="h-3/5 flex flex-col justify-between items-center z-100">
             <div className="flex flex-col justify-between items-center">
