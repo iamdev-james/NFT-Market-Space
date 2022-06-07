@@ -103,17 +103,16 @@ class PopularSales extends Component {
               {/* Expiration and bidding price entry container */}
                 <div className="w-full flex flex-row justify-between items-center">
                 {/* Expiration Time Entry */}
-                  <div className="flex flex-row justify-between items-center text-sm text-gray-700 font-medium dark:text-white">
+                  <div className="flex flex-row justify-between items-center text-sm text-gray-700 font-medium dark:text-primary">
                     <BsClockHistory className="mr-1" />
                     <Time className="mr-1 text-sm" value={ new Date(Item.expirationTime) } format="mm:ss" /> left
                   </div>
                 {/* Bidding Price Entry */}
-                  <p className="text-sm px-2 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">{ Item.biddingPrice } Eth</p>
+                  <p className="text-sm px-2 bg-gray-200 rounded text-blue-600 font-medium dark:bg-gray-900">{ Item.biddingPrice } Eth</p>
                 </div>
-                <div className="mt-4 mb-1 dark:bg-primary" style={{
+                <div className="mt-4 mb-1 bg-[#E2E2ED] dark:bg-gray-800" style={{
                   height: '1px',
-                  width: '100%',
-                  backgroundColor: '#E2E2ED'
+                  width: '100%'
                 }}>
                 </div>
                 <div className="w-full flex flex-row justify-between items-center">
@@ -130,7 +129,7 @@ class PopularSales extends Component {
         })}
         </div>
         <div className="w-full flex flex-col justify-center items-center">
-          <button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200">Show me more</button>
+          <button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-900 dark:border-gray-700 dark:text-white">Show me more</button>
         </div>
       </div>
     )

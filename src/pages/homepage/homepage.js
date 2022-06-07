@@ -47,17 +47,15 @@ class Home extends Component {
         <Showcase2 />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
-        <div className="mt-8" style={{
+        <div className="bg-[#E2E2ED] dark:bg-gray-800" style={{
           height: '1px',
-          width: '100%',
-          backgroundColor: '#E2E2ED'
+          width: '100%'
         }}>
         </div>
         <PopularSales />
-        <div className="mt-8" style={{
+        <div className="bg-[#E2E2ED] dark:bg-gray-800" style={{
           height: '1px',
-          width: '100%',
-          backgroundColor: '#E2E2ED'
+          width: '100%'
         }}>
         </div>
       </Suspense>
