@@ -2,6 +2,9 @@ import Logo from '../../assets/images/logo.svg'
 
 import Toggler from '../../components/ToggleTheme'
 
+// Nav Bar
+import NavBar from '../NavBar/navbar';
+
 
 function Header () {
   return (
@@ -23,6 +26,9 @@ function Header () {
           <Toggler />
           <button className='py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>
           <button className='py-80 px-81 bg-primary rounded-header-btn text-lg text-white ml-6 font-medium'>My Account</button>
+        </div>
+        <div className="inline lg:hidden">
+        <NavBar />
         </div>
       </div>
     </header>

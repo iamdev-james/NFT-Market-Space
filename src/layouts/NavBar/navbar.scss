@@ -1,0 +1,214 @@
+$indigo: #536dc8;
+$danube: #6191d1;
+$white: #fff;
+$bermuda: #77D7B9;
+body {
+  background-image: linear-gradient(to left, $danube, $indigo);
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// .wrapper {
+//   @include center;
+//   width: 320px;
+//   height: 480px;
+//   padding: 1em;
+//   overflow: hidden;
+//   border-radius: 3px;
+//   background-color: $bermuda;
+//   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+// }
+
+.menu-icon-toggle {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 9;
+  .home & {
+    top: 50px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    background-color: $white;
+    transform: translate(0, -50%);
+    transition: opacity 0.3s 0.3s;
+    .home:not(.open) & {
+      background-color: $white;
+    }
+  }
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: $white;
+    transition: transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s;
+  }
+  &::before {
+    top: 6px;
+  }
+  &::after {
+    bottom: 6px;
+  }
+  .open & {
+    span {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &::before,
+    &::after {
+      background-color: $danube;
+    }
+    &::before {
+      top: calc(50% - 1px);
+      transform: rotate(45deg);
+    }
+    &::after {
+      bottom: calc(50% - 1px);
+      transform: rotate(-45deg);
+    }
+    &::before,
+    &::after {
+      transition: top 0.3s, bottom 0.3s, transform 0.3s 0.3s;
+    }
+  }
+}
+
+.menu-background {
+  visibility: hidden;
+  width: 300%;
+  height: 250px;
+  position: absolute;
+  left: -130%;
+  background-color: $white;
+  transition: background-position 0.5s, transform 0.5s 0.5s, visibility 0.5s 1s;
+  .open & {
+    visibility: visible;
+    transition: background-position 0.5s, transform 0.5s 0.5s;
+  }
+  &.top {
+    transform: rotate(-45deg) translateY(-150%);
+    background: linear-gradient(to top, $danube 50%, $white 50%);
+    background-size: 100% 200%;
+    background-position: -100% 100%;
+    .open & {
+      transform: rotate(-45deg) translateY(-49%);
+      background-position: 0 0;
+    }
+  }
+  &.middle {
+    transform: rotate(-45deg) translateY(50%) scaleY(0);
+    background: $white;
+    .open & {
+      transform: rotate(-45deg) translateY(50%) scaleY(1);
+    }
+  }
+  &.bottom {
+    transform: rotate(-45deg) translateY(250%);
+    background: linear-gradient(to bottom, $white 50%, $danube 50%);
+    background-size: 100% 200%;
+    background-position: 0 -100%;
+    .open & {
+      transform: rotate(-45deg) translateY(149%);
+      background-position: 0 0;
+    }
+  }
+}
+
+.menu {
+  @include center;
+  visibility: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 99999;
+  .open & {
+    visibility: visible;
+  }
+  li {
+    opacity: 0;
+    margin-bottom: 5px;
+    transform: translateX(20px);
+    transition: all 0.3s;
+    $time-offset-close: 0;
+    @for $i from 5 through 1 {
+      &:nth-child(#{$i}) {
+        $time-offset-close: $time-offset-close + 0.1;
+        transition-delay: #{$time-offset-close}s;
+        span {
+          transition-delay: #{$time-offset-close}s;
+        }
+      }
+    }
+    .open & {
+      opacity: 1;
+      transform: translateX(0);
+      backface-visibility: hidden;
+      $time-offset-open: 1;
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          $time-offset-open: $time-offset-open + 0.1;
+          transition-delay: #{$time-offset-open}s;
+          span {
+            transition-delay: #{$time-offset-open}s;
+          }
+        }
+      }
+    }
+  }
+  a {
+    position: relative;
+    font-size: 24px;
+    text-decoration: none;
+    color: $danube;
+    &::before {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      background-color: $danube;
+      transform: translateY(-50%);
+      transition: width 0.3s;
+    }
+    &:hover {
+      &::before {
+        width: 15px;
+      }
+    }
+  }
+}
+
+.content {
+  @include center;
+  width: 100%;
+  text-align: center;
+  color: $white;
+  transition: all 0.3s 1s;
+  .open & {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+}
