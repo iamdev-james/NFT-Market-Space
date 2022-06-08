@@ -28,7 +28,8 @@ module.exports = {
         '30': '30px'
       },
       zIndex: {
-        '100': '100',
+        '100': '5',
+        '150': '999999'
       },
       maxWidth: {
         'header': '1600px',

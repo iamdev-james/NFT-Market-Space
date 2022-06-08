@@ -1,40 +1,28 @@
-import { Component } from 'react';
-import './navbar.scss';
+import { useState } from 'react';
+import './navbar.css';
 
 // Jquery
-import $ from 'jquery'
+function NavBar () {
+    const [menuActive, setActive] = useState(false);
 
-class navBar extends Component {
-  // Toogle nav class and animations
-  componentDidMount () {
-    $('.menu-icon-toggle').on('click', function(e) {
-      $('main').toggleClass('open');
-      e.preventDefault();
-    });
-  }
-  render() {
+    const toggleClass = () => {
+      setActive(!menuActive);
+    };
     return (
-      <main>
-        <div className='wrapper'>
-          <header id="header" className="header">
-            <nav className="menu-navigation">
-              <p className="menu-icon-toggle"><span></span></p>
-              <i className="menu-background top"></i>
-              <i className="menu-background middle"></i>
-              <i className="menu-background bottom"></i>
-              <ul className="menu">
-                <li>For Business</li>
-                <li>For Personal</li>
-                <li>Pricing</li>
-                <li>About</li>
-                <li>Contact</li>
-              </ul>
-            </nav>
-          </header>
-        </div>
-      </main>
-    )
+     <div className='burger-main'>
+       {/* MENU OVERLAY */}
+       <div className={menuActive? 'overlay-slide-right z-150 overlay': 'overlay-slide-left z-150 overlay'} id="overlay">
+         {/* <!-- MENU ITEMS --> */}
+          <h1 className='text-white'>Hello World</h1>
+       </div>
+       {/* HAMBURGER MENU */}
+       <div onClick={toggleClass} className={menuActive? 'active z-150 hamburger-menu': 'z-150 hamburger-menu'} id="hamburger-menu">
+         <div className="menu-bar1 bg-black dark:bg-secondary"></div>
+         <div className="menu-bar2 bg-black dark:bg-secondary"></div>
+         <div className="menu-bar3 bg-black dark:bg-secondary"></div>
+       </div>
+     </div>
+   )
   }
-}
 
-export default navBar;
+export default NavBar;

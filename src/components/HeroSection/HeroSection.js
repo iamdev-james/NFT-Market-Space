@@ -37,18 +37,14 @@ function HeroSection() {
           // bottom: '-29%'
         }}></div> */}
         <img src={HeroSquares} style={{
-          zIndex: '6'
+          zIndex: '1'
         }} alt="squares" className="absolute top-48 hidden md:inline" />
         <img src={colorTheme === 'light'? DarkLittleCircles : LittleCircles} style={{
-          zIndex: '4'
+          zIndex: '1'
         }} alt="squares" className="absolute" />
         <img src={BlurredLogo} style={{
-          zIndex: '8'
+          zIndex: '1'
         }} alt="squares" className="absolute" />
-        {/* <img src={colorTheme === 'light'? DarkGradientFade : GradientFade} style={{
-          zIndex: '8',
-          bottom: '-29%'
-        }} alt="squares" className="absolute" /> */}
         <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center mt-32">
           <div className="h-3/6 lg:h-3/5 flex flex-col justify-between items-center z-100">
             <div className="flex flex-col justify-between items-center">
