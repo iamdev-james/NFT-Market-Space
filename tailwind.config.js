@@ -38,9 +38,10 @@ module.exports = {
         'primary':'798px'
       },
       width: {
-        'searchBar': '943px',
+        'searchBar': '643px',
         'psearchBar': '443px',
-        'msearchBar': '300px'
+        'msearchBar': '90vw',
+        'fmsearchBar': '80vw'
       },
       height: {
         'header': '10vh',

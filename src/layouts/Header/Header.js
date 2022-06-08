@@ -6,7 +6,7 @@ import Toggler from '../../components/ToggleTheme'
 function Header () {
   return (
     <header className='2xl:max-w-header py-4 w-screen overflow-hidden absolute z-100'>
-      <div className='h-header w-full px-20 flex flex-row justify-between items-center'>
+      <div className='h-header w-full px-5 md:px-12 lg:px-20 flex flex-row justify-between items-center'>
         <div className='w-1/8 flex flex-row justify-between items-center'>
           <img src={Logo} alt="Logo" />
           <p className='dark:text-white text-2xl font-bold ml-2'>NFT Market</p>
