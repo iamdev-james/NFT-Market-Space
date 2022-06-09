@@ -46,7 +46,7 @@ function HeroSection() {
           zIndex: '1'
         }} alt="squares" className="absolute" />
         <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center mt-32">
-          <div className="h-3/6 lg:h-3/5 flex flex-col justify-between items-center z-100">
+          <div className="h-3/6 md:h-2/5 lg:h-3/5 flex flex-col justify-between items-center lg:z-100 z-1">
             <div className="flex flex-col justify-between items-center">
               <div>
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
@@ -65,7 +65,7 @@ function HeroSection() {
                 <p className="text-primary text-lg">Discover, collect and sell</p>
               </div>
             </div>
-            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center">
+            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center lg:z-1 z-100">
               <input type="search" placeholder="Items, collections and creators" style={{
                 outline: 'none',
               }} className="w-2/3 md:w-1/2 h-full" />
@@ -83,7 +83,7 @@ function HeroSection() {
               <FaSearch className="text-blue-800 text-2xl cursor-pointer" />
             </div>
           </div>
-          <div className="w-full lg:w-2/5 flex flex-row justify-between items-center mt-0 mb-48 md:mb-0 lg:mt-16 z-100 scale-75 md:scale-100">
+          <div className="w-full lg:w-2/5 flex flex-row justify-between items-center mt-0 mb-48 md:mb-0 lg:mt-16 z-1 lg:z-100 scale-75 md:scale-100">
             <img src={Ritter} alt="Ritter" />
             <img src={Adidas} alt="Adidas" />
             <img src={Nike} alt="Nike" />

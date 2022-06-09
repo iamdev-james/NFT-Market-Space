@@ -5,6 +5,13 @@ import Toggler from '../../components/ToggleTheme'
 // Nav Bar
 import NavBar from '../NavBar/navbar';
 
+// Icons from icon library
+import { FaFacebookSquare } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import { FaTwitterSquare } from 'react-icons/fa'
+import { FaInstagram } from 'react-icons/fa'
+
 
 function Header () {
   return (
@@ -27,8 +34,23 @@ function Header () {
           <button className='py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>
           <button className='py-80 px-81 bg-primary rounded-header-btn text-lg text-white ml-6 font-medium'>My Account</button>
         </div>
-        <div className="inline lg:hidden">
-        <NavBar />
+        <div className="inline lg:hidden flex flex-row items-center">
+        <Toggler />
+        <NavBar>
+          <div>
+            <div className='flex flex-col justify-between items-center'>
+              <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-12'>Contact</button>
+              <button className='py-80 px-83 bg-primary rounded-header-btn text-lg text-white font-medium'>My Account</button>
+            </div>
+            <div className="w-2/3 m-auto mt-16 text-xl flex flex-row justify-between items-center text-gray-400">
+              <FaFacebookSquare className='cursor-pointer' />
+              <FaLinkedinIn className='cursor-pointer' />
+              <FaGithub className='cursor-pointer' />
+              <FaTwitterSquare className='cursor-pointer' />
+              <FaInstagram className='cursor-pointer' />
+            </div>
+          </div>
+        </NavBar>
         </div>
       </div>
     </header>
