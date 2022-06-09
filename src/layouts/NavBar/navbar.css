@@ -1,0 +1,49 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+.hamburger-menu {
+  cursor: pointer;
+  mix-blend-mode: difference;
+
+}
+.menu-bar1,
+.menu-bar2,
+.menu-bar3 {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.6rem 0;
+  transition: 0.4s;
+}
+.menu-bar2 {
+  width: 1.5rem;
+  margin-left: auto;
+}
+.active .menu-bar1 {
+  transform: rotate(-45deg) translate(-0.4rem, 0.8rem);
+}
+.active .menu-bar2 {
+  opacity: 0;
+}
+.active .menu-bar3 {
+  transform: rotate(45deg) translate(-0.3rem, -0.8rem);
+}
+
+/* BELOW 600px (Phones) */
+@media (max-width: 37em) {
+  .hamburger-menu {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}

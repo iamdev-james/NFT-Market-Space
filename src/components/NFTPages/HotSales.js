@@ -88,12 +88,12 @@ class HotNFTSales extends Component {
     }
     // Classes for NFT items in row
     return (
-      <main className="dark:bg-darkMode max-w-body px-20 pt-24">
-        <div className="flex flex-row justify-between items-center">
+      <main className="dark:bg-darkMode max-w-body px-6 md:px-20 pt-24">
+        <div className="flex flex-col lg:flex-row justify-between items-center">
         {/* Section 1 */}
           <div className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl dark:border-gray-700">
             <div className=" h-full flex flex-col justify-between items-start">
-              <p className="text-3xl font-bold mb-8 mr-20 dark:text-white">Checkout the hottest Sale offers</p>
+              <p className="text-2xl md:text-3xl font-bold mb-8 mr-20 dark:text-white">Checkout the hottest Sale offers</p>
               <div className="w-full h-1/2 flex flex-row justify-between items-center">
                 {this.state.HottestSales.map(Hottest => {
                   return (
@@ -128,7 +128,7 @@ class HotNFTSales extends Component {
             </div>
           </div>
         {/* Section 2 */}
-          <div className="mx-6 flex-1 -mt-5">
+          <div className="mx-0 lg:mx-6 flex-1 my-8 lg:my-0 lg:-mt-5">
             <div className="flex flex-row justify-start items-center" style={{
               borderBottom: '22px solid #000',
               borderRight: '25px solid transparent',
@@ -152,8 +152,8 @@ class HotNFTSales extends Component {
             </div>
           </div>
         {/* Section 3 */}
-            <div className="flex-1 border-2 border-solid border-gray-200 px-5 py-10 rounded-xl dark:border-gray-700">
-              <p className="text-3xl font-bold mb-10 dark:text-white">Top NFTs at lower price</p>
+            <div className="w-auto md:w-11/12 lg:w-auto flex-1 border-2 border-solid border-gray-200 px-7 py-10 rounded-xl dark:border-gray-700">
+              <p className="text-2xl md:text-3xl font-bold mb-10 dark:text-white">Top NFTs at lower price</p>
               <div className="h-full">
                 {this.state.HotSales.map(CheapItem => {
                   return (

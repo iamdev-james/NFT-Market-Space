@@ -8,7 +8,8 @@ module.exports = {
       backgroundColor: {
         primary: '#4745D0',
         secondary: '#F2F3F6',
-        darkMode: '#000B18'
+        darkMode: '#000B18',
+        custom: '#f3a6f9'
       },
       backgroundImage: {
         'darkCircles': "url('/src/assets/images/Darkcircles.svg')",
@@ -28,7 +29,8 @@ module.exports = {
         '30': '30px'
       },
       zIndex: {
-        '100': '100',
+        '100': '5',
+        '150': '999999'
       },
       maxWidth: {
         'header': '1600px',
@@ -38,9 +40,10 @@ module.exports = {
         'primary':'798px'
       },
       width: {
-        'searchBar': '943px',
+        'searchBar': '643px',
         'psearchBar': '443px',
-        'msearchBar': '300px'
+        'msearchBar': '90vw',
+        'fmsearchBar': '80vw'
       },
       height: {
         'header': '10vh',
@@ -52,7 +55,9 @@ module.exports = {
         '78': '10px',
         '80': '12px',
         '81': '24px',
-        '82': '35px'
+        '82': '35px',
+        '83': '39px',
+        '84': '53px'
       },
       borderRadius: {
         'header-btn': '12px'

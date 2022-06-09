@@ -73,24 +73,24 @@ class PopularSales extends Component {
   }
   render () {
     return (
-      <div className="dark:bg-darkMode max-w-body px-20 pt-24">
+      <div className="dark:bg-darkMode max-w-body px-6 md:px-20 pt-24">
         <div className="text-center">
           <div>
-            <p className="text-primary">OVERLINE</p>
-            <p className="dark:text-white text-3xl font-bold">Most popular live auctions</p>
+            <p className="text-primary text-sm md:text-core">OVERLINE</p>
+            <p className="dark:text-white text-2xl md:text-3xl font-bold">Most popular live auctions</p>
           </div>
-          <div className="w-2/5 mx-auto my-7 flex flex-row justify-around items-center">
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Architecture</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Photography</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Games</p>
-            <p className="py-1 px-4 font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
+          <div className="w-full md:w-2/5 mx-auto my-7 flex flex-row justify-around items-center">
+            <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Architecture</p>
+            <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Photography</p>
+            <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Games</p>
+            <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
           {this.state.popularSales.map(Item => {
           return (
             <div key={Item.id}>
-              <div className="flex flex-col justify-center items-start mx-4 my-12">
+              <div className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
                 <img src={Item.imgUrl} alt={Item.name} style={{
                   width: '100%',
                   height: '100%',
