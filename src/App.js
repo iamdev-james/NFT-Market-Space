@@ -30,7 +30,7 @@ class App extends Component {
         <Header />
         <Routes>
           <Route path='/' element = { <HomePage /> } />
-          <Route path='/item' element = { <ItemPage /> } />
+          <Route path='/item/:itemid' element = { <ItemPage /> } />
           <Route path='*' element = { <NotFound /> } />
         </Routes>
         <Footer />

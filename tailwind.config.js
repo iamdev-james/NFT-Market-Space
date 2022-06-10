@@ -9,7 +9,8 @@ module.exports = {
         primary: '#4745D0',
         secondary: '#F2F3F6',
         darkMode: '#000B18',
-        custom: '#f3a6f9'
+        custom: '#f3a6f9',
+        itemDarkBid: 'linear-gradient(187.96deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 93.86%), #060714'
       },
       backgroundImage: {
         'darkCircles': "url('/src/assets/images/Darkcircles.svg')",
@@ -47,9 +48,11 @@ module.exports = {
       },
       height: {
         'header': '10vh',
+        'phero': '700px',
         'footer': '450px',
         'searchBar': '84px',
-        'msearchBar': '64px'
+        'msearchBar': '64px',
+        'item': '555px'
       },
       padding: {
         '78': '10px',
