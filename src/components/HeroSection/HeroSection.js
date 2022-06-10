@@ -45,8 +45,8 @@ function HeroSection() {
         <img src={BlurredLogo} style={{
           zIndex: '1'
         }} alt="squares" className="absolute" />
-        <div className="2xl:max-h-primary h-screen flex flex-col justify-around items-center mt-32">
-          <div className="h-3/6 md:h-2/5 lg:h-3/5 flex flex-col justify-between items-center lg:z-100 z-1">
+        <div className="2xl:max-h-primary lg:h-screen md:h-phero h-screen flex flex-col justify-around items-center mt-32">
+          <div className="h-3/6 md:h-3/5 lg:h-3/5 flex flex-col justify-between items-center lg:z-100 z-1">
             <div className="flex flex-col justify-between items-center">
               <div>
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
@@ -83,7 +83,7 @@ function HeroSection() {
               <FaSearch className="text-blue-800 text-2xl cursor-pointer" />
             </div>
           </div>
-          <div className="w-full lg:w-2/5 flex flex-row justify-between items-center mt-0 mb-48 md:mb-0 lg:mt-16 z-1 lg:z-100 scale-75 md:scale-100">
+          <div className="w-full md:w-4/5 lg:w-2/5 flex flex-row justify-between items-center mt-0 mb-48 md:mb-0 lg:mt-16 z-1 lg:z-100 scale-75 md:scale-100">
             <img src={Ritter} alt="Ritter" />
             <img src={Adidas} alt="Adidas" />
             <img src={Nike} alt="Nike" />

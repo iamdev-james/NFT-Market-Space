@@ -1,6 +1,9 @@
+// Importing link from react router dom
+import { Link } from 'react-router-dom';
+
 import Slider from "react-slick";
 // Time formatter to format expiration time
-import Time from 'react-time-format'
+import Time from 'react-time-format';
 
 // Importing react icons
 import { BsClockHistory } from 'react-icons/bs'
@@ -52,8 +55,9 @@ let settings = {
   ]
 };
 
-const LiveAuction = props => (
-	<div className="dark:bg-darkMode max-w-body pt-48">
+const LiveAuction = props => {
+  return (
+	<div className="dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
     <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
     <Slider {...settings}>
       {props.NFTs.map(Item => {
@@ -82,7 +86,14 @@ const LiveAuction = props => (
                 <div className="flex flex-row justify-start items-center px-5 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-primary dark:hover:text-white">
                   <FiHeart className="mr-4" /><p>{(Item.asset.collection.opensea_seller_fee_basis_points - (Math.random() * 100)).toFixed(0)}</p>
                 </div>
-                <button className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-500">View Details</button>
+              {/* Redirecting to the exact product page */}
+                <Link to={'/item/' + Item.asset.token_id }
+                  state = {{
+                    CONTRACT_ADDRESS: Item.asset.asset_contract.address,
+                    ETH_PRICE: parseFloat(Item.payment_token_contract.eth_price * Math.random()).toFixed(2),
+                    EXPIRATION_TIME: Item.expiration_time
+                  }} 
+                ><button className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-500">View Details</button></Link>
               </div>
             </div>
           </div>
@@ -91,5 +102,6 @@ const LiveAuction = props => (
     </Slider>
   </div>
 )
+}
 
 export default LiveAuction;

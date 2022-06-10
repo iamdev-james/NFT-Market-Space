@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Logo from '../../assets/images/logo.svg'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { FaLinkedinIn } from 'react-icons/fa'
@@ -13,7 +15,7 @@ function Footer () {
         <div className='flex-1 w-5/6 md:w-3/5 lg:w-auto py-10 h-full flex flex-col justify-between items-start pl-5 lg:pl-10'>
           <div className='flex flex-row justify-start items-center mb-20 lg:mb-0'>
             <img src={Logo} alt="Logo" />
-            <p className='text-2xl font-bold ml-2 cursor-pointer dark:text-white'>NFT Market</p>
+            <Link to="/"><p className='text-2xl font-bold ml-2 cursor-pointer dark:text-white'>NFT Market</p></Link>
           </div>
           <div className='w-full pr-0 md:pr-8 text-primary flex flex-row justify-between items-center'>
             <p className='cursor-pointer'>Support</p>

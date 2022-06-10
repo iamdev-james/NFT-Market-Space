@@ -2,6 +2,8 @@ import Logo from '../../assets/images/logo.svg'
 
 import Toggler from '../../components/ToggleTheme'
 
+import { Link } from 'react-router-dom'
+
 // Nav Bar
 import NavBar from '../NavBar/navbar';
 
@@ -19,7 +21,7 @@ function Header () {
       <div className='h-header w-full px-5 md:px-12 lg:px-20 flex flex-row justify-between items-center'>
         <div className='w-1/8 flex flex-row justify-between items-center'>
           <img src={Logo} alt="Logo" />
-          <p className='dark:text-white text-2xl font-bold ml-2'>NFT Market</p>
+          <Link to='/'><p className='dark:text-white text-2xl font-bold ml-2'>NFT Market</p></Link>
         </div>
         <div className='w-1/3 hidden lg:inline'>
           <nav className='w-full text-lg font-medium text-primary flex flex-row justify-between items-center'>
@@ -38,11 +40,17 @@ function Header () {
         <Toggler />
         <NavBar>
           <div>
+            <nav className='w-full h-full text-lg font-medium text-primary flex flex-col justify-between items-center'>
+              <nav-item className='cursor-pointer'>Auctions</nav-item>
+              <nav-item className='cursor-pointer mt-10'>Roadmap</nav-item>
+              <nav-item className='cursor-pointer mt-10'>Discover</nav-item>
+              <nav-item className='cursor-pointer mt-10'>Community</nav-item>
+            </nav>
             <div className='flex flex-col justify-between items-center'>
-              <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-12'>Contact</button>
+              <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>
               <button className='py-80 px-83 bg-primary rounded-header-btn text-lg text-white font-medium'>My Account</button>
             </div>
-            <div className="w-2/3 m-auto mt-16 text-xl flex flex-row justify-between items-center text-gray-400">
+            <div className="w-2/3 m-auto mt-8 text-xl flex flex-row justify-between items-center text-gray-400">
               <FaFacebookSquare className='cursor-pointer' />
               <FaLinkedinIn className='cursor-pointer' />
               <FaGithub className='cursor-pointer' />
