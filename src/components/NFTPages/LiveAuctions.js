@@ -83,7 +83,7 @@ const LiveAuction = props => {
               }}>
               </div>
               <div className="w-full flex flex-row justify-between items-center">
-                <div className="flex flex-row justify-start items-center px-5 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-primary dark:hover:text-white">
+                <div className="flex flex-row justify-start items-center text-sm sm:text-core px-4 sm:px-5 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-primary dark:hover:text-white">
                   <FiHeart className="mr-4" /><p>{(Item.asset.collection.opensea_seller_fee_basis_points - (Math.random() * 100)).toFixed(0)}</p>
                 </div>
               {/* Redirecting to the exact product page */}
@@ -93,7 +93,7 @@ const LiveAuction = props => {
                     ETH_PRICE: parseFloat(Item.payment_token_contract.eth_price * Math.random()).toFixed(2),
                     EXPIRATION_TIME: Item.expiration_time
                   }} 
-                ><button className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-500">View Details</button></Link>
+                ><button className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-500">View Details</button></Link>
               </div>
             </div>
           </div>
