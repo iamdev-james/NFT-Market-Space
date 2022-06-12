@@ -26,7 +26,7 @@ const SingleItem = props => {
                   <img src={props.state.owner? props.state.owner.profile_img_url : 'testing out'} alt='profile' className='mr-3 w-12 h-12 rounded-full' />
                   <div className='text-sm'>
                     <p className='text-primary'>Creator</p>
-                    <p className='cursor-pointer dark:text-white font-medium'>{props.state.owner.user.username > 2? props.state.owner.user.username : 'James.eth'}</p>
+                    <p className='cursor-pointer dark:text-white font-medium'>{props.state.owner? props.state.owner.user.username : 'James.eth'}</p>
                   </div>
                 </div>
                 <div className='text-sm flex flex-row justify-between items-center'>
