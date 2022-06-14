@@ -25,7 +25,7 @@ function Header () {
         </div>
         <div className='w-1/3 hidden lg:inline'>
           <nav className='w-full text-lg font-medium text-primary flex flex-row justify-between items-center'>
-            <nav-item className='cursor-pointer'>Auctions</nav-item>
+            <Link to='/auctions'><nav-item className='cursor-pointer'>Auctions</nav-item></Link>
             <nav-item className='cursor-pointer'>Roadmap</nav-item>
             <nav-item className='cursor-pointer'>Discover</nav-item>
             <nav-item className='cursor-pointer'>Community</nav-item>
@@ -41,10 +41,10 @@ function Header () {
         <NavBar>
           <div>
             <nav className='w-full h-full text-lg font-medium text-primary flex flex-col justify-between items-center'>
-              <nav-item className='cursor-pointer'>Auctions</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Roadmap</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Discover</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Community</nav-item>
+              <p className='cursor-pointer'>Auctions</p>
+              <p className='cursor-pointer mt-10'>Roadmap</p>
+              <p className='cursor-pointer mt-10'>Discover</p>
+              <p className='cursor-pointer mt-10'>Community</p>
             </nav>
             <div className='flex flex-col justify-between items-center'>
               <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>
