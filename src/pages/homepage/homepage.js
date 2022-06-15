@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 
+import { BookLoader } from "react-awesome-loaders";
 
 // Components to be used in the homepage
 import HeroSection from '../../components/HeroSection/HeroSection';
@@ -16,7 +17,14 @@ const Home = props => {
   return (
     <div className="overflow-x-hidden">
       <HeroSection />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={
+      <BookLoader
+        background={"linear-gradient(135deg, #6066FA, #4645F6)"}
+        desktopSize={"100px"}
+        mobileSize={"80px"}
+        textColor={"#4645F6"}
+      />
+      }>
         <LiveAuction NFTs = { props } />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
