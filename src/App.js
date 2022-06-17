@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   render () {
-    return (
+    return this.state.NFTs ? (
       <main className="overflow-x-hidden">
         <Header />
         <Routes>
@@ -59,6 +59,11 @@ class App extends Component {
         </Routes>
         <Footer />
       </main>
+    ) :
+    (
+      <div>
+        Something went wrong
+      </div>
     )
   }
 }
