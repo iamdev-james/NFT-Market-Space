@@ -52,7 +52,8 @@ module.exports = {
         'searchBar': '84px',
         'msearchBar': '64px',
         'item': '555px',
-        'mitem': '370px'
+        'mitem': '370px',
+        'auction': '800px'
       },
       padding: {
         '78': '10px',

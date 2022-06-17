@@ -73,7 +73,7 @@ class PopularSales extends Component {
   }
   render () {
     return (
-      <div className="dark:bg-darkMode max-w-body px-6 md:px-20 pt-24">
+      <div className="dark:bg-darkMode max-w-body px-6 md:px-20 lg:px-0 xl:px-20 pt-24">
         <div className="text-center">
           <div>
             <p className="text-primary text-sm md:text-core">OVERLINE</p>

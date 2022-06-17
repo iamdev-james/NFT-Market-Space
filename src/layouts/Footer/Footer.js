@@ -9,15 +9,15 @@ import { FaInstagram } from 'react-icons/fa'
 
 function Footer () {
   return (
-    <main className='dark:bg-darkMode max-w-header h-auto lg:h-footer py-12 px-6 md:px-12 lg:px-20 pt-20'>
+    <main className='dark:bg-darkMode max-w-header h-auto lg:h-footer py-12 px-6 md:px-12 lg:px-10 xl:px-20 pt-20'>
       <div className='h-full flex flex-col lg:flex-row justify-between items-start lg:items-center border-2 border-solid border-secondary rounded-2xl dark:border-gray-800'>
     {/* Section 1 */}
-        <div className='flex-1 w-5/6 md:w-3/5 lg:w-auto py-10 h-full flex flex-col justify-between items-start pl-5 lg:pl-10'>
+        <div className='flex-1 w-5/6 md:w-3/5 lg:w-full xl:w-auto py-10 h-full flex flex-col justify-between items-start pl-5 lg:pl-4 xl:pl-10'>
           <div className='flex flex-row justify-start items-center mb-20 lg:mb-0'>
             <img src={Logo} alt="Logo" />
             <Link to="/"><p className='text-2xl font-bold ml-2 cursor-pointer dark:text-white'>NFT Market</p></Link>
           </div>
-          <div className='w-full pr-0 md:pr-8 text-primary flex flex-row justify-between items-center'>
+          <div className='w-full pr-0 md:pr-8 lg:pr-2 xl:pr-8 text-primary flex flex-row justify-between items-center text-sm xl:text-core'>
             <p className='cursor-pointer'>Support</p>
             <p className='cursor-pointer'>Terms of service</p>
             <p className='cursor-pointer'>License</p>
@@ -38,7 +38,7 @@ function Footer () {
               <button className='py-78 px-81 bg-primary rounded-header-btn text-lg text-white font-medium'>My account</button>
             </div>
           </div>
-          <div className="w-2/3 md:w-1/2 lg:w-2/3 text-xl flex flex-row justify-between items-center text-gray-400">
+          <div className="w-2/3 md:w-1/2 lg:w-3/4 xl:w-2/3 text-xl flex flex-row justify-between items-center text-gray-400">
             <FaFacebookSquare className='cursor-pointer' />
             <FaLinkedinIn className='cursor-pointer' />
             <FaGithub className='cursor-pointer' />

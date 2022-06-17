@@ -15,13 +15,13 @@ const SingleItem = props => {
       <div>
         <div className='h-auto w-11/12 md:w-5/6 lg:w-9/12 p-4 rounded-lg flex flex-col md:flex-row items-center justify-between m-auto border-2 border-solid border-gray-200 dark:border-gray-800'>
           <div className='md:w-6/12 h-mitem md:h-item md:flex-1'>
-            <img src={props.state.image_url} alt={props.state.name} className="w-full h-full rounded-lg" style={{
+            <img src={props.state.image_url? props.state.image_url : 'https://lh3.googleusercontent.com/0oIfvpJPgWG9vCb_obS0pDmtrzoCuL3f5_tczGjU4s1J88UfU9F2D_fa22T-Z3-WoCKGgIV48wt3QQ7dXrAhR3P1Pw5x78aEpAopEQ'} alt={props.state.name} className="w-full h-full rounded-lg" style={{
                 boxShadow: '0px 0.2px 5px #333'
             }}/>
           </div>
           <div className='md:flex-1 mt-6 md:mt-0 px-0 md:px-12'>
             <div>
-              <p className='text-3xl font-bold mb-2 dark:text-white'>{props.state.name}</p>
+              <p className='text-3xl font-bold mb-2 dark:text-white'>{props.state.name? props.state.name : 'Item Listed'}</p>
               <p className='text-primary my-4 md:my-0'>{props.state.description}</p>
               <div className='w-11/12 md:w-3/4 flex flex-row justify-between items-center py-4'>
                 <div className='flex flex-row'>
