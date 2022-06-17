@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react'
+import React from 'react';
+import { useState, useEffect, Suspense } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import axios from 'axios';
 
-import Item from '../../components/ItemsSection/SingleItem'
+const Item = React.lazy(()=> import('../../components/ItemsSection/SingleItem'))
+const Collection = React.lazy(()=> import('../../components/ItemsSection/Collections'))
 
-function SingleItem () {
+// Loader 
+// import { CircleLoader } from "react-awesome-loaders";
+
+function SingleItem (props) {
   
   // Getting URL params and state to be used to fetch
   const { itemid } = useParams();
@@ -28,14 +33,29 @@ function SingleItem () {
   })
 
   // The props we are passing to the SingleItem child
-  let props = {
+  let SingleItemProps = {
     state,
     location
   }
 // Returning response to end users(we will check if we get a good response here before rendering to the end user)
-  return (
-    <Item { ...props }/>
-  )
+  // document.onreadystatechange = () => {
+  //   if(document.readyState === 'loading' || document.readyState === 'interactive') {
+  //     return (
+  //       <div>Loading</div>
+  //     )
+  //   }
+        window.scrollTo(0, 0)
+      return (
+        <div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Item { ...SingleItemProps }/>
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Collection NFTs = {props}/>
+          </Suspense>
+        </div>
+    )
+  // }
 }
 
 export default SingleItem;

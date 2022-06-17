@@ -4,6 +4,12 @@ import Toggler from '../../components/ToggleTheme'
 
 import { Link } from 'react-router-dom'
 
+// Importing Popup library for signin and signup auth
+import Popup from 'reactjs-popup';
+
+// Importing the Auth component Modal
+import SIGN_UP from '../../components/Authentication/Sign-up';
+
 // Nav Bar
 import NavBar from '../NavBar/navbar';
 
@@ -25,7 +31,7 @@ function Header () {
         </div>
         <div className='w-1/3 hidden lg:inline'>
           <nav className='w-full text-lg font-medium text-primary flex flex-row justify-between items-center'>
-            <nav-item className='cursor-pointer'>Auctions</nav-item>
+            <Link to='/auctions'><nav-item className='cursor-pointer'>Auctions</nav-item></Link>
             <nav-item className='cursor-pointer'>Roadmap</nav-item>
             <nav-item className='cursor-pointer'>Discover</nav-item>
             <nav-item className='cursor-pointer'>Community</nav-item>
@@ -34,17 +40,21 @@ function Header () {
         <div className='lg:flex flex-row justify-between items-center hidden'>
           <Toggler />
           <button className='py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>
-          <button className='py-80 px-81 bg-primary rounded-header-btn text-lg text-white ml-6 font-medium'>My Account</button>
+          <Popup trigger={ 
+            <button className='py-80 px-81 bg-primary rounded-header-btn text-lg text-white ml-6 font-medium'>My Account</button>
+           } modal>
+            <SIGN_UP />
+           </Popup>
         </div>
         <div className="inline lg:hidden flex flex-row items-center">
         <Toggler />
         <NavBar>
           <div>
             <nav className='w-full h-full text-lg font-medium text-primary flex flex-col justify-between items-center'>
-              <nav-item className='cursor-pointer'>Auctions</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Roadmap</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Discover</nav-item>
-              <nav-item className='cursor-pointer mt-10'>Community</nav-item>
+              <p className='cursor-pointer'>Auctions</p>
+              <p className='cursor-pointer mt-10'>Roadmap</p>
+              <p className='cursor-pointer mt-10'>Discover</p>
+              <p className='cursor-pointer mt-10'>Community</p>
             </nav>
             <div className='flex flex-col justify-between items-center'>
               <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>

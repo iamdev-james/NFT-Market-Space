@@ -4,7 +4,9 @@ import { FaUser } from 'react-icons/fa'
 
 import ItemGraph from '../../assets/images/itemgraph.svg'
 
-import './SingleItem.css'
+// Alternate image for creator
+import Creator from '../../assets/images/popular/image5.svg'
+
 
 
 const SingleItem = props => {
@@ -23,7 +25,7 @@ const SingleItem = props => {
               <p className='text-primary my-4 md:my-0'>{props.state.description}</p>
               <div className='w-11/12 md:w-3/4 flex flex-row justify-between items-center py-4'>
                 <div className='flex flex-row'>
-                  <img src={props.state.owner? props.state.owner.profile_img_url : 'testing out'} alt='profile' className='mr-3 w-12 h-12 rounded-full' />
+                  <img src={props.state.owner? props.state.owner.profile_img_url : Creator } alt='profile' className='mr-3 w-12 h-12 rounded-full' />
                   <div className='text-sm'>
                     <p className='text-primary'>Creator</p>
                     <p className='cursor-pointer dark:text-white font-medium'>{props.state.owner? props.state.owner.user.username : 'James.eth'}</p>

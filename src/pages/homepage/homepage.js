@@ -1,6 +1,6 @@
-import React, { Component, Suspense } from "react";
-// Importing Axios for Opensea API calls
-import axios from "axios"
+import React, { Suspense } from "react";
+
+import { BookLoader } from "react-awesome-loaders";
 
 // Components to be used in the homepage
 import HeroSection from '../../components/HeroSection/HeroSection';
@@ -13,29 +13,19 @@ const PopularSales = React.lazy(()=> import('../../components/NFTPages/MostPopul
 const Showcase3 = React.lazy(()=> import('../../components/SideShowcase/ShowCase3'));
 const Showcase4 = React.lazy(()=> import('../../components/SideShowcase/ShowCase4'));
 
-class Home extends Component {
-  constructor () {
-    super()
-    this.state = {
-      NFTs: []
-    };
-  }
-
-  componentDidMount () {
-    axios.get('https://testnets-api.opensea.io/wyvern/v1/orders?bundled=false&include_bundled=false&side=1&limit=20&offset=0&order_by=created_date&order_direction=desc')
-      .then( res => {
-        this.setState({NFTs: res.data.orders})
-      })
-      .catch(err => {
-        console.log('oops, missed that. An error occured')
-      })
-  }
-  render () {
-    return (
+const Home = props => {
+  return (
     <div className="overflow-x-hidden">
       <HeroSection />
-      <Suspense fallback={<div>Loading...</div>}>
-        <LiveAuction NFTs={this.state.NFTs} />
+      <Suspense fallback={
+      <BookLoader
+        background={"linear-gradient(135deg, #6066FA, #4645F6)"}
+        desktopSize={"100px"}
+        mobileSize={"80px"}
+        textColor={"#4645F6"}
+      />
+      }>
+        <LiveAuction NFTs = { props } />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Showcase1 />
@@ -66,8 +56,7 @@ class Home extends Component {
         <Showcase4 />
       </Suspense>
     </div>
-    )
-  }
+  )
 }
 
 export default Home;

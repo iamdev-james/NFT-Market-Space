@@ -55,23 +55,23 @@ let settings = {
   ]
 };
 
-const LiveAuction = props => {
+const Collections = props => {
   return (
 	<div className="dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
-    <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
+    <p className="dark:text-white text-center text-3xl font-bold mb-12">Checkout More Live Auctions</p>
     <Slider {...settings}>
       {props.NFTs.NFTs.map(Item => {
         return (
           <div key={Item.id}>
             <div className="flex flex-col justify-center items-start mx-4 my-12">
-              <img src={Item.asset.image_url? Item.asset.image_url: 'https://lh3.googleusercontent.com/0oIfvpJPgWG9vCb_obS0pDmtrzoCuL3f5_tczGjU4s1J88UfU9F2D_fa22T-Z3-WoCKGgIV48wt3QQ7dXrAhR3P1Pw5x78aEpAopEQ'} alt={Item.asset.name} style={{
+              <img src={Item.asset.image_url? Item.asset.image_url: 'https://lh3.googleusercontent.com/ycLVz0wFnv7UhJyUWgfOy2KIR4Xnx-87_SDpgIK-fY4leqBO210eDIE2-M0WJzhgZFX75D_3zzjHDkK0cyMZTjwYb7qjKj8Fptdx'} alt={Item.asset.name} style={{
                 width: '100%',
                 height: '350px',
                 borderRadius: '20px',
                 boxShadow: '0px 0.2px 5px #333'
               }} />
               <div className="w-full my-4 flex flex-row justify-between items-center">
-                <p className="text-core font-bold dark:text-white">{ Item.asset.name? Item.asset.name: 'Item Listed' }</p>
+                <p className="text-core font-bold dark:text-white">{ Item.asset.name }</p>
                 <p className="text-core px-3 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">{ parseFloat(Item.payment_token_contract.eth_price * Math.random()).toFixed(2) } Eth</p>
               </div>
               <div className="flex flex-row justify-start items-center font-medium dark:text-primary">
@@ -104,4 +104,4 @@ const LiveAuction = props => {
 )
 }
 
-export default LiveAuction;
+export default Collections;
