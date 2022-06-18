@@ -51,7 +51,7 @@ function Header () {
         <NavBar>
           <div>
             <nav className='w-full h-full text-lg font-medium text-primary flex flex-col justify-between items-center'>
-              <p className='cursor-pointer'>Auctions</p>
+              <Link to='/auctions'><nav-item className='cursor-pointer'>Auctions</nav-item></Link>
               <p className='cursor-pointer mt-10'>Roadmap</p>
               <p className='cursor-pointer mt-10'>Discover</p>
               <p className='cursor-pointer mt-10'>Community</p>
