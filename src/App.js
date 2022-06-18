@@ -21,8 +21,6 @@ import Auctions from './pages/Auction/auction'
 import Header from './layouts/Header/Header'
 // Footer
 import Footer from './layouts/Footer/Footer'
-// Authentication (SIGN_UP and SIGN_IN)
-import AUTH from './pages/Authpage/Auth';
 // 404 page
 import NotFound from './pages/NotFound/404'
 
@@ -48,13 +46,12 @@ class App extends Component {
 
   render () {
     return this.state.NFTs ? (
-      <main className="overflow-x-hidden">
+      <main className="overflow-x-hidden dark:bg-darkMode">
         <Header />
         <Routes>
           <Route path='/' element = { <HomePage  NFTs= {this.state.NFTs} /> } />
           <Route path='/item/:itemid' element = { <ItemPage NFTs= {this.state.NFTs} /> } />
           <Route path='/auctions' element = { <Auctions NFTs = {this.state.NFTs} /> } />
-          <Route path='/auth' element = { <AUTH /> } />
           <Route path='*' element = { <NotFound /> } />
         </Routes>
         <Footer />
