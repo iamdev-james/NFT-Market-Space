@@ -32,9 +32,9 @@ function Header () {
         <div className='w-1/3 hidden lg:inline'>
           <nav className='w-full text-lg font-medium text-primary flex flex-row justify-between items-center'>
             <Link to='/auctions'><nav-item className='cursor-pointer'>Auctions</nav-item></Link>
-            <nav-item className='cursor-pointer'>Roadmap</nav-item>
-            <nav-item className='cursor-pointer'>Discover</nav-item>
-            <nav-item className='cursor-pointer'>Community</nav-item>
+            <Link to='/roadmap'><nav-item className='cursor-pointer'>Roadmap</nav-item></Link>
+            <Link to='/discover'><nav-item className='cursor-pointer'>Discover</nav-item></Link>
+            <Link to='/community'><nav-item className='cursor-pointer'>Community</nav-item></Link>
           </nav>
         </div>
         <div className='lg:flex flex-row justify-between items-center hidden'>
@@ -46,15 +46,18 @@ function Header () {
             <SIGN_UP />
            </Popup>
         </div>
+
+
+      {/* Mobile Nav Bar */}
         <div className="inline lg:hidden flex flex-row items-center">
         <Toggler />
         <NavBar>
           <div>
             <nav className='w-full h-full text-lg font-medium text-primary flex flex-col justify-between items-center'>
-              <p className='cursor-pointer'>Auctions</p>
-              <p className='cursor-pointer mt-10'>Roadmap</p>
-              <p className='cursor-pointer mt-10'>Discover</p>
-              <p className='cursor-pointer mt-10'>Community</p>
+              <Link to='/auctions'><nav-item className='cursor-pointer'>Auctions</nav-item></Link>
+              <Link to='/roadmap'><nav-item className='cursor-pointer mt-10'>Roadmap</nav-item></Link>
+              <Link to='/discover'><nav-item className='cursor-pointer mt-10'>Discover</nav-item></Link>
+              <Link to='/community'><nav-item className='cursor-pointer mt-10'>Community</nav-item></Link>
             </nav>
             <div className='flex flex-col justify-between items-center'>
               <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>

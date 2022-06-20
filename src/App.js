@@ -17,6 +17,12 @@ import HomePage from './pages/homepage/homepage'
 import ItemPage from './pages/itempage/item'
 // Auction
 import Auctions from './pages/Auction/auction'
+// Discover
+import { Discover } from './pages/Discover/discover';
+// Community
+import { Community } from './pages/Community/community';
+// Roadmap
+import { Roadmap } from './pages/RoadMap/roadmap';
 // Header
 import Header from './layouts/Header/Header'
 // Footer
@@ -52,6 +58,9 @@ class App extends Component {
           <Route path='/' element = { <HomePage  NFTs= {this.state.NFTs} /> } />
           <Route path='/item/:itemid' element = { <ItemPage NFTs= {this.state.NFTs} /> } />
           <Route path='/auctions' element = { <Auctions NFTs = {this.state.NFTs} /> } />
+          <Route path='/discover' element = { <Discover /> } />
+          <Route path='/roadmap' element = { <Roadmap /> } />
+          <Route path='/community' element = { <Community /> } />
           <Route path='*' element = { <NotFound /> } />
         </Routes>
         <Footer />

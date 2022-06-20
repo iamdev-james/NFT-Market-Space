@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-import { BookLoader } from "react-awesome-loaders";
+import { MainLoader } from '../../Loaders/MainLoader'
 
 // Components to be used in the homepage
 import HeroSection from '../../components/HeroSection/HeroSection';
@@ -18,25 +18,20 @@ const Home = props => {
     <div className="overflow-x-hidden">
       <HeroSection />
       <Suspense fallback={
-      <BookLoader
-        background={"linear-gradient(135deg, #6066FA, #4645F6)"}
-        desktopSize={"100px"}
-        mobileSize={"80px"}
-        textColor={"#4645F6"}
-      />
+        <MainLoader />
       }>
         <LiveAuction NFTs = { props } />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <Showcase1 />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <HotSales />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <Showcase2 />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <div className="bg-[#E2E2ED] dark:bg-gray-800" style={{
           height: '1px',
           width: '100%'
@@ -49,10 +44,10 @@ const Home = props => {
         }}>
         </div>
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <Showcase3 />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<MainLoader />}>
         <Showcase4 />
       </Suspense>
     </div>
