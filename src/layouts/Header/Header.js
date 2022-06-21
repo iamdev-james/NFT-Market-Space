@@ -58,6 +58,7 @@ function Header () {
               <Link to='/roadmap'><nav-item className='cursor-pointer mt-10'>Roadmap</nav-item></Link>
               <Link to='/discover'><nav-item className='cursor-pointer mt-10'>Discover</nav-item></Link>
               <Link to='/community'><nav-item className='cursor-pointer mt-10'>Community</nav-item></Link>
+
             </nav>
             <div className='flex flex-col justify-between items-center'>
               <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>
