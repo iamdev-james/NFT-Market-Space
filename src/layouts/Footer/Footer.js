@@ -15,7 +15,7 @@ function Footer () {
         <div className='flex-1 w-5/6 md:w-3/5 lg:w-full xl:w-auto py-10 h-full flex flex-col justify-between items-start pl-5 lg:pl-4 xl:pl-10'>
           <div className='flex flex-row justify-start items-center mb-20 lg:mb-0'>
             <img src={Logo} alt="Logo" />
-            <Link to="/"><p className='text-2xl font-bold ml-2 cursor-pointer dark:text-white'>NFT Market</p></Link>
+            <Link to="/"><p className='text-2xl font-bold ml-2 cursor-pointer text-gray-800 dark:text-gray-400'>NFT Market</p></Link>
           </div>
           <div className='w-full pr-0 md:pr-8 lg:pr-2 xl:pr-8 text-primary flex flex-row justify-between items-center text-sm xl:text-core'>
             <p className='cursor-pointer'>Support</p>
@@ -28,15 +28,15 @@ function Footer () {
           <div className='w-full'>
             <div style={{
               lineHeight: '1.9'
-            }} className='text-lg font-bold mb-6 dark:text-white'>
+            }} className='text-lg text-gray-700 font-bold mb-6 dark:text-gray-500'>
               <p className='cursor-pointer'>Auctions</p>
               <p className='cursor-pointer'>Roadmap</p>
               <p className='cursor-pointer'>Discover</p>
               <p className='cursor-pointer'>Community</p>
             </div>
-            <div className='mb-6 lg:mb-0'>
+            {/* <div className='mb-6 lg:mb-0'>
               <button className='py-78 px-81 bg-primary rounded-header-btn text-lg text-white font-medium'>My account</button>
-            </div>
+            </div> */}
           </div>
           <div className="w-2/3 md:w-1/2 lg:w-3/4 xl:w-2/3 text-xl flex flex-row justify-between items-center text-gray-400">
             <FaFacebookSquare className='cursor-pointer' />

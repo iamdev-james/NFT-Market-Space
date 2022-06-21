@@ -51,7 +51,7 @@ function SingleItem (props) {
             <Item { ...SingleItemProps }/>
           </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
-            <Collection NFTs = {props}/>
+            <Collection className="mt-40 md:mt-16 lg:mt-0" NFTs = {props}/>
           </Suspense>
         </div>
     )
