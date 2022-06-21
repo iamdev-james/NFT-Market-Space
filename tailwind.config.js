@@ -9,7 +9,8 @@ module.exports = {
         primary: '#4745D0',
         secondary: '#F2F3F6',
         darkMode: '#000B18',
-        custom: '#f3a6f9'
+        custom: '#f3a6f9',
+        loginDark: '#1B1C1E'
       },
       backgroundImage: {
         'darkCircles': "url('/src/assets/images/Darkcircles.svg')",

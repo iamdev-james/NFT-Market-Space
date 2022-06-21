@@ -1,4 +1,3 @@
-import { BookLoader } from 'react-awesome-loaders'
 import '../Auction/auction.css'
 
 export const Roadmap = () => {
@@ -19,8 +18,7 @@ export const Roadmap = () => {
         <li className='bg-custom dark:bg-primary'></li>
       </ul>
       <div className='w-full flex flex-col justify-center items-center ItemCont absolute z-100 h-full mx-auto'>
-        <BookLoader />
-        <div className='mt-8 text-xl font-medium dark:text-white'>Welcome to Roadmap</div>
+        <div className='mt-8 text-6xl font-medium dark:text-white'>ROADMAP</div>
       </div>
     </main>
   )

@@ -28,7 +28,7 @@ export const Community = () => {
           desktopSize={"90px"}
           mobileSize={"64px"}
         />
-        <div className='mt-8 text-3xl font-bold dark:text-white'>Welcome to Community</div>
+        <div className='mt-0 text-3xl font-bold dark:text-white'>Welcome to Community</div>
         <p className='font-medium text-sm py-4 dark:text-white'>Click the button below to join our discord server</p>
         <button className="flex flex-row justify-center items-center my-3 px-6 sm:px-6 py-3 sm:py-3 rounded-lg bg-primary text-white text-core font-bold hover:bg-blue-900"><FaDiscord className="mr-3 text-white text-2xl" /> Join Discord Server</button>
       </div>
