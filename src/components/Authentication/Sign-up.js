@@ -1,13 +1,25 @@
 import { useGoogleLogin } from '@react-oauth/google';
 
-import { FaGoogle, FaHeading } from 'react-icons/fa'
+import { FaGoogle, FaHeading } from 'react-icons/fa';
+
+import axios from 'axios';
 
 
 const SIGN_UP = () => {
   const login = useGoogleLogin({
-   onSuccess: tokenResponse => console.log(tokenResponse),
+   onSuccess: tokenResponse => getDetails(tokenResponse.access_token),
    onError: err => console.log(err),
   });
+
+  const getDetails = async(access_token) => {
+    await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+      headers: {
+        'Authorization' : `Bearer ${access_token}`
+      }
+    })
+    .then(res => console.log(res))
+    .catch(error => console.log(error))
+  }
   return (
     <main>
       <div className='px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
