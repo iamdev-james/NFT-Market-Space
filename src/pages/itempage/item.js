@@ -6,9 +6,6 @@ import axios from 'axios';
 const Item = React.lazy(()=> import('../../components/ItemsSection/SingleItem'))
 const Collection = React.lazy(()=> import('../../components/ItemsSection/Collections'))
 
-// Loader 
-// import { CircleLoader } from "react-awesome-loaders";
-
 function SingleItem (props) {
   
   // Getting URL params and state to be used to fetch

@@ -1,41 +1,22 @@
-import { useGoogleLogin } from '@react-oauth/google';
+import { FaHeading } from 'react-icons/fa';
 
-import { FaGoogle, FaHeading } from 'react-icons/fa';
-
-import axios from 'axios';
+import { GOOGLE_AUTH } from '../../hooks/AuthHooks/googleAuth';
 
 
 const SIGN_UP = () => {
-  const login = useGoogleLogin({
-   onSuccess: tokenResponse => getDetails(tokenResponse.access_token),
-   onError: err => console.log(err),
-  });
-
-  const getDetails = async(access_token) => {
-    await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
-      headers: {
-        'Authorization' : `Bearer ${access_token}`
-      }
-    })
-    .then(res => console.log(res))
-    .catch(error => console.log(error))
-  }
   return (
     <main>
-      <div className='px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
+      <div className='mx-4 sm:mx-0 px-10 md:px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
         <div>
           <p className='text-4xl font-bold pb-5'>Sign In</p>
           <p className='text-sm font-medium pb-12'>Welcome back, please select a suitable login option below</p>
         </div>
         <div className='flex flex-col justify-center items-center'>
           <div>
-            <button className='px-10 py-3 rounded-xl bg-secondary flex flex-row justify-center items-center text-black text-lg font-medium hover:bg-gray-300' onClick={() => login()}>
-              <FaGoogle className='mr-4 text-2xl font-bold text-red-500' />
-              Sign in with Google
-            </button>
+            <GOOGLE_AUTH />
           </div>
           <div className='mt-6'>
-            <button className='px-7 py-3 rounded-xl bg-secondary flex flex-row justify-center items-center text-black text-lg font-medium hover:bg-gray-300' onClick={() => login()}>
+            <button className='px-7 py-3 rounded-xl bg-secondary flex flex-row justify-center items-center text-black text-sm md:text-lg font-bold md:font-medium hover:bg-gray-300'>
               <FaHeading className='mr-4 text-2xl font-bold text-red-500' />
                 Sign in with MetaMask
             </button>
