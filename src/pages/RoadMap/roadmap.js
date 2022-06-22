@@ -1,8 +1,10 @@
+import { RoadMap } from '../../components/NFTPages/roadmap'
+
 import '../Auction/auction.css'
 
 export const Roadmap = () => {
   return (
-    <main className="main h-auction py-32 overflow-hidden area dark:bg-darkMode">
+    <main className="main h-auction py-14 overflow-hidden area dark:bg-darkMode">
       <ul className="circles" style={{
       filter: 'blur(3px)'
     }}>
@@ -18,7 +20,7 @@ export const Roadmap = () => {
         <li className='bg-custom dark:bg-primary'></li>
       </ul>
       <div className='w-full flex flex-col justify-center items-center ItemCont absolute z-100 h-full mx-auto'>
-        <div className='mt-8 text-6xl font-medium dark:text-white'>ROADMAP</div>
+        <RoadMap />
       </div>
     </main>
   )

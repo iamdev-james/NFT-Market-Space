@@ -144,3 +144,10 @@
   }
 
 }
+
+@media screen and (max-width: 550px) {
+  /* For Roadmap */
+  .euzbmD, .hRoNdo {
+    padding: 0 !important;
+  }
+}
