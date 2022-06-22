@@ -11,14 +11,24 @@ const SIGN_UP = () => {
    onError: err => console.log(err),
   });
 
+// Get users details on successful token generation
   const getDetails = async(access_token) => {
     await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
       headers: {
         'Authorization' : `Bearer ${access_token}`
       }
     })
-    .then(res => console.log(res))
+    .then(res => storeUserData(res.data))
     .catch(error => console.log(error))
+  }
+
+// Store user data upon confirmation
+  const storeUserData = (userInfo) => {
+    const authInfo = {
+      userIsLoggedIn: true,
+      userInfo
+    };
+    window.localStorage.setItem('authStatus', authInfo)
   }
   return (
     <main>
