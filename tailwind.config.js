@@ -30,11 +30,12 @@ module.exports = {
         '30': '30px'
       },
       zIndex: {
+        '90': '1',
         '100': '5',
-        '150': '999999'
+        '150': '99999999'
       },
       maxWidth: {
-        'header': '1600px',
+        'header': '1500px',
         'body': '1500px'
       },
       maxHeight: {

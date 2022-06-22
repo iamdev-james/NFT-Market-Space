@@ -30,9 +30,17 @@
         overflow-x: hidden;
         scroll-behavior: smooth;
       }
+      @media screen and (min-width: 1700px) {
+        body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body class="dark:bg-darkMode">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
