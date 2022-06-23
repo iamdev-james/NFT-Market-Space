@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 // Account button for authenticatio
 import { Account } from '../../components/Authentication/account';
+import { Contact } from '../../components/SideShowcase/contact';
 
 // Nav Bar
 import NavBar from '../NavBar/navbar';
@@ -36,7 +37,7 @@ function Header () {
         </div>
         <div className='lg:flex flex-row justify-between items-center hidden'>
           <Toggler />
-          <button className='py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>
+          <Contact />
           <Account />
         </div>
 
@@ -53,7 +54,7 @@ function Header () {
               <Link to='/community'><nav-item className='cursor-pointer mt-10'>Community</nav-item></Link>
             </nav>
             <div className='flex flex-col justify-between items-center'>
-              <button className='py-78 px-84 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium mb-6 mt-8'>Contact</button>
+              <Contact />
               <Account />
             </div>
             <div className="w-2/3 m-auto mt-8 text-xl flex flex-row justify-between items-center text-gray-400">

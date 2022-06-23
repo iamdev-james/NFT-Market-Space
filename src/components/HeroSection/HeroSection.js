@@ -1,6 +1,10 @@
 // import { Component } from "react";
 import { FaSearch } from 'react-icons/fa'
 
+// Using framer and react observeble to check when element is in view port
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 // Use dark hook to get current
 import useDark from '../../hooks/useDark';
 
@@ -23,6 +27,11 @@ import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
 // import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
 
 function HeroSection() {
+    const [titleRef, titleInView] = useInView({
+      triggerOnce: true,
+      rootMargin: '-100px 0px',
+    });
+
     const searchBar = {
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 25px 75px rgba(6, 7, 20, 0.1)',
@@ -51,16 +60,18 @@ function HeroSection() {
               <div>
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
               </div>
-              <div className="flex flex-col justify-center items-center">
+              <motion.div 
+              ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+              className="flex flex-col justify-center items-center">
                 <div className="flex flex-row justify-end items-center mb-12">
                   <p className="lg:text-10xl md:text-6xl text-5xl font-bold dark:text-white">A new NFT</p>
-                  <img src={HeroFrame1} alt='Frame1' className='scale-50 lg:scale-100' />
+                  <img src={HeroFrame1} alt='Frame1' className='animate-bounce scale-50 lg:scale-100' />
                 </div>
                 <div className="flex flex-row justify-start items-center my-10 -mt-10 md:ml-16">
-                  <img src={HeroFrame2} alt="Frame2" className='scale-50 lg:scale-100' />
+                  <img src={HeroFrame2} alt="Frame2" className='animate-bounce scale-50 lg:scale-100' />
                   <p className="dark:text-white lg:text-10xl md:text-6xl text-5xl font-bold">Experience</p>
                 </div>
-              </div>
+              </motion.div>
               <div>
                 <p className="text-primary text-lg">Discover, collect and sell</p>
               </div>

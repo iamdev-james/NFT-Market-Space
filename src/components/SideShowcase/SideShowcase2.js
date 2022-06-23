@@ -1,10 +1,20 @@
 // Icons to be used
 import { FaPalette } from 'react-icons/fa'
 import { FaArtstation } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function SideShowcase2 () {
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-100px 0px',
+  });
   return (
-    <main className='dark:bg-darkMode max-w-body overflow-x-hidden flex flex-col-reverse lg:flex-row justify-end items-center pt-24 px-6 md:px-20 lg:px-10 xl:px-20 pb-12'>
+    <motion.main 
+    ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+    className='dark:bg-darkMode max-w-body overflow-x-hidden flex flex-col-reverse lg:flex-row justify-end items-center pt-24 px-6 md:px-20 lg:px-10 xl:px-20 pb-12'>
       <div className='flex-1 order-2 h-full flex flex-col justify-around items-start pl-0 md:pl-8 lg:pl-6 xl:pl-32'>
         <div className='mb-8'>
           <p className="text-primary text-lg">OVERLINE</p>
@@ -31,14 +41,14 @@ function SideShowcase2 () {
           </div>
         </div>
         <div className='flex flex-row justify-start items-center mt-10'>
-          <button className='text-sm md:text-lg text-white font-medium rounded-header-btn mr-8 py-80 px-81 bg-primary'>Get Started</button>
-          <button className='text-sm md:text-lg font-medium text-primary rounded-header-btn py-80 px-81 border-2 border-priamry'>Learn more</button>
+          <Link to='/auctions'><button className='text-sm md:text-lg text-white font-medium rounded-header-btn mr-8 py-80 px-81 bg-primary'>Get Started</button></Link>
+          <Link to='/community'><button className='text-sm md:text-lg font-medium text-primary rounded-header-btn py-80 px-81 border-2 border-priamry'>Learn more</button></Link>
         </div>
       </div>
       <div className='flex-1 order-1'>
         <img src="https://i.im.ge/2022/06/02/r88xjW.png" alt="ShowcaseImage" />
       </div>
-    </main>
+    </motion.main>
   )
 }
 
