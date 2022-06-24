@@ -1,19 +1,36 @@
+import { useEffect } from 'react';
+
 // Icons to be used
 import { FaPalette } from 'react-icons/fa'
 import { FaArtstation } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function SideShowcase2 () {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+  
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  }
+
   return (
     <motion.main 
-    ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+    ref={ref}
+    variants={boxVariant}
+    initial="hidden"
+    animate={control} transition={{ duration: 0.5 }}
     className='dark:bg-darkMode max-w-body overflow-x-hidden flex flex-col-reverse lg:flex-row justify-end items-center pt-24 px-6 md:px-20 lg:px-10 xl:px-20 pb-12'>
       <div className='flex-1 order-2 h-full flex flex-col justify-around items-start pl-0 md:pl-8 lg:pl-6 xl:pl-32'>
         <div className='mb-8'>

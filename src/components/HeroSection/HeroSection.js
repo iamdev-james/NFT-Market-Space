@@ -1,8 +1,8 @@
-// import { Component } from "react";
+import { useEffect } from "react";
 import { FaSearch } from 'react-icons/fa'
 
 // Using framer and react observeble to check when element is in view port
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Use dark hook to get current
@@ -27,10 +27,30 @@ import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
 // import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
 
 function HeroSection() {
-    const [titleRef, titleInView] = useInView({
-      triggerOnce: true,
-      rootMargin: '-100px 0px',
-    });
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+    
+    // Animation parameters
+    const boxVariant = {
+      visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+      hidden: { opacity: 0, scale: 0 }
+    }
+    const SlideLeftVariant = {
+      visible: {
+        x: 0, opacity: 1, scale: 1, transition: { duration: 0.45}
+      },
+      hidden: {
+        x: -150, opacity: 0.8, scale: 0.5
+      }
+    }
 
     const searchBar = {
       backgroundColor: '#FFFFFF',
@@ -57,11 +77,19 @@ function HeroSection() {
         <div className="2xl:max-h-primary lg:h-screen md:h-phero h-screen flex flex-col justify-around items-center mt-32">
           <div className="h-3/6 md:h-3/5 lg:h-3/5 flex flex-col justify-between items-center lg:z-100 z-1">
             <div className="flex flex-col justify-between items-center">
-              <div>
+              <motion.div
+              ref={ref}
+              variants={SlideLeftVariant}
+              initial="hidden"
+              animate={control}    
+              >
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
-              </div>
+              </motion.div>
               <motion.div 
-              ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+              ref={ref}
+              variants={boxVariant}
+              initial="hidden"
+              animate={control}    
               className="flex flex-col justify-center items-center">
                 <div className="flex flex-row justify-end items-center mb-12">
                   <p className="lg:text-10xl md:text-6xl text-5xl font-bold dark:text-white">A new NFT</p>

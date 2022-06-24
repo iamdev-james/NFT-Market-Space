@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Time formatter to format expiration time
@@ -72,17 +72,42 @@ function PopularSales () {
       }
     ])
 
-  // Framer Params
-    const [titleRef, titleInView] = useInView({
-      triggerOnce: true,
-      rootMargin: '-100px 0px',
-    });
+    // Instances for the framer motion 
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+    
+    const boxVariant = {
+      visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+      hidden: { x: 10, opacity: 0, scale: 0 }
+    }
+
+    // Slide in animation
+    const SlideVariant = {
+      visible: {
+        x: 0, opacity: 1, transition: { duration: 0.8 }
+      },
+      hidden: {
+        x: 230, opacity: 0.7 
+      }
+    }
 
     return (
-      <motion.div 
-      ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+      <div
       className="dark:bg-darkMode max-w-body px-6 md:px-20 lg:px-0 xl:px-20 pt-24">
-        <div className="text-center">
+        <motion.div 
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+        className="text-center">
           <div>
             <p className="text-primary text-sm md:text-core">OVERLINE</p>
             <p className="dark:text-white text-2xl md:text-3xl font-bold">Most popular live auctions</p>
@@ -93,11 +118,16 @@ function PopularSales () {
             <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Games</p>
             <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
           </div>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
           {popularSales.map(Item => {
           return (
-            <div key={Item.id}>
+            <motion.div
+              ref={ref}
+              variants={SlideVariant}
+              initial="hidden"
+              animate={control}    
+              key={Item.id}>
               <div className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
                 <img src={Item.imgUrl} alt={Item.name} style={{
                   width: '100%',
@@ -132,14 +162,14 @@ function PopularSales () {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
         </div>
         <div className="w-full flex flex-col justify-center items-center">
           <Link to='/auctions'><button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-900 dark:border-gray-700 dark:text-white">Show me more</button></Link>
         </div>
-      </motion.div>
+      </div>
     )
   }
 

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Time formatter to format expiration time
@@ -80,11 +80,22 @@ function HotNFTSales (){
        }
      ])
 // Framer Parameters
-   const [titleRef, titleInView] = useInView({
-     triggerOnce: true,
-     rootMargin: '-100px 0px',
-   });
+    const control = useAnimation();
+    const [ref, inView] = useInView();
 
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+
+    // Animation parameters
+    const boxVariant = {
+      visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+      hidden: { opacity: 0, scale: 0 }
+    }
     const circleStyle = {
       width: '15px',
       height: '15px',
@@ -96,12 +107,12 @@ function HotNFTSales (){
 
     // Classes for NFT items in row
     return (
-      <motion.main 
-      ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+      <main
       className="dark:bg-darkMode max-w-body px-6 md:px-20 lg:px-10 xl:px-20 pt-24">
         <div className="flex flex-col lg:flex-row justify-between items-center">
         {/* Section 1 */}
-          <div className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl dark:border-gray-700">
+          <div
+          className="flex-1 border-2 border-solid border-gray-200 pl-8 py-7 rounded-xl dark:border-gray-700">
             <div className=" h-full flex flex-col justify-between items-start">
               <p className="text-2xl md:text-3xl font-bold mb-8 mr-20 dark:text-white">Checkout the hottest Sale offers</p>
               <div className="w-full h-1/2 flex flex-row justify-between items-center">
@@ -138,7 +149,12 @@ function HotNFTSales (){
             </div>
           </div>
         {/* Section 2 */}
-          <div className="mx-0 lg:mx-6 flex-1 my-8 lg:my-0 lg:-mt-5">
+          <motion.div 
+          ref={ref}
+          variants={boxVariant}
+          initial="hidden"
+          animate={control}
+          className="mx-0 lg:mx-6 flex-1 my-8 lg:my-0 lg:-mt-5">
             <div className="flex flex-row justify-start items-center" style={{
               borderBottom: '22px solid #000',
               borderRight: '25px solid transparent',
@@ -160,9 +176,10 @@ function HotNFTSales (){
               </div>
               <Link className="w-11/12 mx-4 mt-6 text-xl font-bold py-3 my-10 mx-8 rounded-lg text-center bg-primary hover:bg-blue-900" to='/community'><button>Get Started</button></Link>
             </div>
-          </div>
+          </motion.div>
         {/* Section 3 */}
-            <div className="w-auto md:w-11/12 lg:w-auto flex-1 border-2 border-solid border-gray-200 px-7 py-10 rounded-xl dark:border-gray-700">
+            <div     
+            className="w-auto md:w-11/12 lg:w-auto flex-1 border-2 border-solid border-gray-200 px-7 py-10 rounded-xl dark:border-gray-700">
               <p className="text-2xl md:text-3xl font-bold mb-10 dark:text-white">Top NFTs at lower price</p>
               <div className="h-full">
                 {HotSales.map(CheapItem => {
@@ -196,7 +213,7 @@ function HotNFTSales (){
               <Link to='/auctions'><button className="w-11/12 ml-2 mt-6 text-lg font-medium py-3 rounded-lg text-center border-2 border-solid border-gray-300 hover:bg-gray-200 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Show me more</button></Link>
             </div>
         </div>
-      </motion.main>
+      </main>
     )
   }
 export default HotNFTSales;

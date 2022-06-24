@@ -1,16 +1,31 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom"
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function SideShowcase () {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+  
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  }
   return (
     <motion.main 
-    ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+    ref={ref}
+    variants={boxVariant}
+    initial="hidden"
+    animate={control} transition={{ duration: 0.5 }}
     className='dark:bg-darkMode max-w-body overflow-x-hidden flex flex-col lg:flex-row justify-start items-center pt-24 px-6 md:px-20 lg:px-10 xl:px-20'>
       <div className='flex-1 order-1 h-full flex flex-col justify-around items-start pr-0 md:pr-32 lg:pr-6 xl:pr-48'>
         <div className='mb-8'>

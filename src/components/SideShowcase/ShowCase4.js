@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { useEffect } from 'react'
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const circleStyle = {
@@ -12,15 +13,30 @@ const circleStyle = {
   marginLeft: '10px'
 }
 
-function ShowCase4 () {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
 
+
+function ShowCase4 () {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+  
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  }
   return (
     <motion.main 
-    ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+    ref={ref}
+    variants={boxVariant}
+    initial="hidden"
+    animate={control}
     className="dark:bg-darkMode max-w-body px-6 md:px-12 lg:px-10 xl:px-24 pt-24">
       <div className="flex flex-col justify-start items-start"
       style={{

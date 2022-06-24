@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Icon Images to be used 
@@ -9,14 +11,28 @@ import { FaArtstation } from 'react-icons/fa'
 
 
 function ShowCase3 () {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+  
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  }
 
   return (
     <motion.main 
-    ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+    ref={ref}
+    variants={boxVariant}
+    initial="hidden"
+    animate={control}
     className='dark:bg-darkMode max-w-body px-8 md:px-24 lg:px-64 pt-20'>
       <div className='grid grid-cols-2 md:grid-cols-4 justify-between items-center'>
         <div className='flex flex-col justify-between items-center my-5 md:my-0'>

@@ -1,7 +1,8 @@
+import { useEffect } from 'react'
 // Importing link from react router dom
 import { Link } from 'react-router-dom';
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import Slider from "react-slick";
@@ -59,13 +60,27 @@ let settings = {
 };
 
 const LiveAuction = props => {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+  
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  }
   return (
 	<motion.div
-  ref={titleRef} animate={{ scale: titleInView ? 1 : 0 }} transition={{ duration: 0.5 }}
+  ref={ref}
+  variants={boxVariant}
+  initial="hidden"
+  animate={control} transition={{ duration: 0.5 }}
   className="dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
     <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
     <Slider {...settings}>
