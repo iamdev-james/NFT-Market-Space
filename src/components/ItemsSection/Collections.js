@@ -57,7 +57,7 @@ let settings = {
 
 const Collections = props => {
   return (
-    <div className="mt-24 md:mt-16 lg:mt-0 dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
+    <div className="mt-40 md:mt-16 lg:mt-0 dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
     <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
     <Slider {...settings}>
       {props.NFTs.NFTs.map(Item => {
