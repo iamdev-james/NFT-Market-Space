@@ -23,7 +23,7 @@ module.exports = {
       },
       fontSize: {
         '10xl': '98px',
-        '9xl': '64px'
+        '9xl': '60px'
       },
       borderWidth: {
         '2': '0.5px',

@@ -29,7 +29,7 @@ function HotNFTSales (){
    const [HotSales] = useState([
        {
          id: 'item1',
-         name: 'Snakeagone',
+         name: 'Manaricuta',
          biddingPrice: '1.20',
          expirationTime: 1654186177,
          imgUrl: Image1,
@@ -37,7 +37,7 @@ function HotNFTSales (){
        },
        {
          id: 'item2',
-         name: 'Leaflooww',
+         name: 'Enpilocos',
          biddingPrice: '1.15',
          expirationTime: 1656605973,
          imgUrl: Image2,
@@ -45,7 +45,7 @@ function HotNFTSales (){
        },
        {
          id: 'item3',
-         name: 'Banana NFT',
+         name: 'Intestitial',
          biddingPrice: '2.03',
          expirationTime: 1656606065,
          imgUrl: Image3,
@@ -53,7 +53,7 @@ function HotNFTSales (){
        },
        {
          id: 'item4',
-         name: 'Splasher',
+         name: 'Rashmord',
          biddingPrice: '3.36',
          expirationTime: 1656604420,
          imgUrl: Image4,
@@ -64,7 +64,7 @@ function HotNFTSales (){
      const [HottestSales] = useState([
        {
          id: 'item1',
-         name: 'Snakeagone',
+         name: 'Epilosco',
          biddingPrice: '1.20',
          expirationTime: 1654186177,
          imgUrl: Image1_1,
@@ -72,7 +72,7 @@ function HotNFTSales (){
        },
        {
          id: 'item2',
-         name: 'Leaflooww',
+         name: 'Indignable',
          biddingPrice: '1.15',
          expirationTime: 1656605973,
          imgUrl: Image1_2,

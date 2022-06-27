@@ -21,12 +21,12 @@ export const Contact = () => {
     <main>
       <ToastContainer />
        <Popup
-          trigger={<button className='py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>}
+          trigger={<button className='my-6 lg:my-0 py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>}
           modal
           nested
         >
           {close => (
-            <div className='mx-4 sm:mx-0 px-10 md:px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
+            <div className='scale-95 md:scale-100 mx-2 sm:mx-0 px-3 md:px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
               <button style={closeBtn} onClick={close}>
                 &times;
               </button>
@@ -39,19 +39,19 @@ export const Contact = () => {
                 <form className="flex flex-col justify-start items-center text-justify leading-loose">
                   <label className="my-2 font-medium sm:text-core text-sm">
                     Name:
-                    <input type="text" className="text-sm md:text-core w-[300px] ml-5 px-4 text-black outline-none rounded-lg h-12" placeholder="Enter your name" required />
+                    <input type="text" className="text-sm md:text-core w-[250px] md:w-[300px] ml-5 px-4 text-black outline-none rounded-lg h-12" placeholder="Enter your name" required />
                   </label>
                   <label className="my-2 font-medium sm:text-core text-sm">
                     Email:
-                    <input type="text" className="text-sm md:text-core w-[300px] ml-5 px-4 text-black outline-none rounded-lg h-12" placeholder="Enter your Email" required />
+                    <input type="text" className="text-sm md:text-core w-[250px] md:w-[300px] ml-5 px-4 text-black outline-none rounded-lg h-12" placeholder="Enter your Email" required />
                   </label>
                   <label className="my-2 font-medium sm:text-core text-sm">
                     Title:
-                    <input type="text" className="text-sm md:text-core w-[300px] ml-8 px-4 text-black outline-none rounded-lg h-12" placeholder="What's your message about..." required />
+                    <input type="text" className="text-sm md:text-core w-[250px] md:w-[300px] ml-8 px-4 text-black outline-none rounded-lg h-12" placeholder="What's your message about..." required />
                   </label>
                   <label className="my-2 font-medium sm:text-core text-sm">
                     Message:
-                    <textarea className="text-sm md:text-core w-[300px] ml-2 px-4 text-black outline-none rounded-lg h-24" placeholder="Type in your message" required />
+                    <textarea className="text-sm md:text-core w-[250px] md:w-[300px] ml-2 px-4 text-black outline-none rounded-lg h-24" placeholder="Type in your message" required />
                   </label>
                   <input
                    className="w-[280px] mt-6 px-10 py-3 rounded-xl bg-secondary text-black flex flex-row justify-center items-center text-black text-sm md:text-lg font-bold md:font-medium hover:bg-gray-300 cursor-pointer"

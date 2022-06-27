@@ -38,21 +38,21 @@ function SideShowcase2 () {
           <p style={{
             lineHeight: '100%',
             letterSpacing: '0.2px'
-          }} className='text-4xl md:text-9xl font-bold dark:text-white'>Habitant tristique aliquam in vel scelerisque</p>
+          }} className='text-4xl md:text-9xl font-bold dark:text-white'>Get creative tokens from world class creators</p>
         </div>
         <p className='text-sm md:text-core text-primary mb-8 text-lg pr-12'>Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor pulvinar ultricies dolor feugiat aliquam commodo.</p>
         <div className='flex flex-row justify-start items-center'>
           <div className="flex flex-col justify-start items-start">
           <FaArtstation className='dark:text-white text-3xl' />
             <div className='mt-6'>
-              <p className='text-core md:text-lg font-bold dark:text-white'>Sollicitudin sapien</p>
+              <p className='text-core md:text-lg font-bold dark:text-white'>ETH support</p>
               <p className='text-sm md:text-core text-primary'>Cursus fermentum</p>
             </div>
           </div>
           <div className="flex flex-col justify-start items-start ml-8">
           <FaPalette className='dark:text-white text-3xl' />
             <div className='mt-6'>
-              <p className='text-core md:text-lg font-bold dark:text-white'>Pulvinar metus</p>
+              <p className='text-core md:text-lg font-bold dark:text-white'>Solana support</p>
               <p className='text-sm md:text-core text-primary'>Nunc sed</p>
             </div>
           </div>

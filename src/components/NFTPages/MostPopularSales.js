@@ -92,10 +92,10 @@ function PopularSales () {
     // Slide in animation
     const SlideVariant = {
       visible: {
-        x: 0, opacity: 1, transition: { duration: 0.8 }
+        x: 0, opacity: 1, transition: { duration: 0.5 }
       },
       hidden: {
-        x: 230, opacity: 0.7 
+        x: 230, opacity: 0.7
       }
     }
 
@@ -119,16 +119,18 @@ function PopularSales () {
             <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
           </div>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
+        <motion.div 
+        ref={ref}
+        variants={SlideVariant}
+        initial="hidden"
+        animate={control}    
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
           {popularSales.map(Item => {
           return (
-            <motion.div
-              ref={ref}
-              variants={SlideVariant}
-              initial="hidden"
-              animate={control}    
+            <div
               key={Item.id}>
-              <div className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
+              <div 
+              className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
                 <img src={Item.imgUrl} alt={Item.name} style={{
                   width: '100%',
                   height: '100%',
@@ -162,10 +164,10 @@ function PopularSales () {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           );
         })}
-        </div>
+        </motion.div>
         <div className="w-full flex flex-col justify-center items-center">
           <Link to='/auctions'><button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-900 dark:border-gray-700 dark:text-white">Show me more</button></Link>
         </div>

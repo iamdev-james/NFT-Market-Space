@@ -96,7 +96,7 @@ export const RoadMap = () => {
   ];
 
   return (
-    <div className="max-w-body w-screen 2xl:h-phero h-5/6 px-2 sm:px-4 md:px-16">
+    <div className="max-w-body w-screen 2xl:h-phero h-5/6 px-2 sm:px-4 md:px-16 z-90">
       <Chrono slideShow items={items} mode="VERTICAL_ALTERNATING" theme={{
         primary: '#4745D0',
         secondary: '#F2F3F6',

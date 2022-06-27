@@ -28,7 +28,7 @@ function Footer () {
           <div className='w-full'>
             <div style={{
               lineHeight: '1.9'
-            }} className='text-lg text-gray-700 font-bold mb-6 dark:text-gray-500'>
+            }} className='text-core text-gray-700 font-bold mb-6 dark:text-gray-500'>
               <p className='cursor-pointer'>Auctions</p>
               <p className='cursor-pointer'>Roadmap</p>
               <p className='cursor-pointer'>Discover</p>
@@ -48,7 +48,7 @@ function Footer () {
         </div>
     {/* Section 3 */}
         <div className='flex-1 py-10 h-full flex flex-col justify-between items-center px-3 md:px-12'>
-          <p className='text-sm md:text-core text-primary mb-12 lg:mb-0'>Nibh volutpat, aliquam id sagittis elementum. Pellentesque laoreet velit, sed egestas in. Id nam semper dolor tellus vulputate eget turpis. </p>
+          <p className='text-sm md:text-core text-primary mb-12 lg:mb-0'>Hello there, want to get daily updates on crypto market trends and NFT news, drop your email address to get weekly news from us at NFT market </p>
           <div style={{
             height: '64px',
             backgroundColor: '#FFFFFF',

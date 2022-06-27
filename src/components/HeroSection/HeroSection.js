@@ -104,7 +104,7 @@ function HeroSection() {
                 <p className="text-primary text-lg">Discover, collect and sell</p>
               </div>
             </div>
-            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center lg:z-1 z-100">
+            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center lg:z-1 z-90">
               <input type="search" placeholder="Items, collections and creators" style={{
                 outline: 'none',
               }} className="w-2/3 md:w-1/2 h-full" />

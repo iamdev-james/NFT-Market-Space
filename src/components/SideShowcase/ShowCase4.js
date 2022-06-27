@@ -55,7 +55,7 @@ function ShowCase4 () {
         <div className="pl-4 md:pl-16 lg:pl-12 xl:pl-32 bg-secondary py-16 rounded-b-xl rounded-tr-xl flex flex-col lg:flex-row justify-between items-center dark:bg-[#262840] mb-4">
           <div className="flex-1 h-full flex flex-col justify-between items-start">
             <p className="text-primary mb-2">OVERLINE</p>
-            <p className="text-3xl md:text-5xl leading-semi font-bold mb-8 dark:text-white">Cursus vitae sollicitudin donec nascetur. Join now</p>
+            <p className="text-3xl md:text-5xl leading-semi font-bold mb-8 dark:text-white">Unlimited access with long lasting benefits. Join now</p>
             <p className="w-5/6 text-primary text-justify text-sm md:text-core">Donec volutpat bibendum justo, odio aenean congue est porttitor ut. Mauris vestibulum eros libero amet tincidunt.</p>
             <div className='w-5/6 md:w-3/4 xl:w-2/3 mt-12 flex flex-row justify-between items-center'>
               <Link className='py-80 px-81 md:px-82 bg-primary rounded-header-btn text-sm md:text-lg text-white font-medium' to='/auctions'><button>Get started</button></Link>
