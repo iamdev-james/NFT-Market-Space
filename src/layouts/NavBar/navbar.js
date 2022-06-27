@@ -27,7 +27,9 @@ const NavBar = props => {
           </div>
         </div>
          {/* <!-- MENU ITEMS --> */}
-         {props.children}
+         <div onClick={toggleClass}>
+          {props.children}
+         </div>
        </div>
        {/* HAMBURGER MENU */}
        <div onClick={toggleClass} className='z-150 hamburger-menu' id="hamburger-menu">

@@ -1,4 +1,9 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Time formatter to format expiration time
 import Time from 'react-time-format'
@@ -15,66 +20,94 @@ import Images4 from '../../assets/images/popular/image4.svg'
 import Images5 from '../../assets/images/popular/image5.svg'
 import Images6 from '../../assets/images/popular/image6.svg'
 
-class PopularSales extends Component {
-  constructor () {
-    super();
-    this.state= {
-      popularSales: [
-        {
-          id: 'item1',
-          name: 'Snakeagone',
-          biddingPrice: '1.20',
-          expirationTime: 1654186177,
-          imgUrl: Images1,
-          peopleBidding: '30'
-        },
-        {
-          id: 'item2',
-          name: 'Leaflooww',
-          biddingPrice: '1.90',
-          expirationTime: 1656605973,
-          imgUrl: Images2,
-          peopleBidding: '500'
-        },
-        {
-          id: 'item3',
-          name: 'Banana NFT',
-          biddingPrice: '2.20',
-          expirationTime: 1656606065,
-          imgUrl: Images3,
-          peopleBidding: '2'
-        },
-        {
-          id: 'item4',
-          name: 'Splasher',
-          biddingPrice: '7.20',
-          expirationTime: 1656604420,
-          imgUrl: Images4,
-          peopleBidding: '167'
-        },
-        {
-          id: 'item5',
-          name: 'Ilumsonaryfi',
-          biddingPrice: '0.20',
-          expirationTime: 1669480525,
-          imgUrl: Images5,
-          peopleBidding: '15'
-        },
-        {
-          id: 'item6',
-          name: 'EvolutonFT',
-          biddingPrice: '10.90',
-          expirationTime: 1656602996,
-          imgUrl: Images6,
-          peopleBidding: '101'
-        }
-      ]
+function PopularSales () {
+  const [popularSales] = useState([
+      {
+        id: 'item1',
+        name: 'Snakeagone',
+        biddingPrice: '1.20',
+        expirationTime: 1654186177,
+        imgUrl: Images1,
+        peopleBidding: '30'
+      },
+      {
+        id: 'item2',
+        name: 'Leaflooww',
+        biddingPrice: '1.90',
+        expirationTime: 1656605973,
+        imgUrl: Images2,
+        peopleBidding: '500'
+      },
+      {
+        id: 'item3',
+        name: 'Banana NFT',
+        biddingPrice: '2.20',
+        expirationTime: 1656606065,
+        imgUrl: Images3,
+        peopleBidding: '2'
+      },
+      {
+        id: 'item4',
+        name: 'Splasher',
+        biddingPrice: '7.20',
+        expirationTime: 1656604420,
+        imgUrl: Images4,
+        peopleBidding: '167'
+      },
+      {
+        id: 'item5',
+        name: 'Ilumsonaryfi',
+        biddingPrice: '0.20',
+        expirationTime: 1669480525,
+        imgUrl: Images5,
+        peopleBidding: '15'
+      },
+      {
+        id: 'item6',
+        name: 'EvolutonFT',
+        biddingPrice: '10.90',
+        expirationTime: 1656602996,
+        imgUrl: Images6,
+        peopleBidding: '101'
+      }
+    ])
+
+    // Instances for the framer motion 
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+    
+    const boxVariant = {
+      visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+      hidden: { x: 10, opacity: 0, scale: 0 }
     }
-  }
-  render () {
+
+    // Slide in animation
+    const SlideVariant = {
+      visible: {
+        x: 0, opacity: 1, transition: { duration: 0.5 }
+      },
+      hidden: {
+        x: 230, opacity: 0.7
+      }
+    }
+
     return (
-      <div className="dark:bg-darkMode max-w-body px-6 md:px-20 lg:px-0 xl:px-20 pt-24">
-        <div className="text-center">
+      <div
+      className="dark:bg-darkMode max-w-body px-6 md:px-20 lg:px-0 xl:px-20 pt-24">
+        <motion.div 
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+        className="text-center">
           <div>
             <p className="text-primary text-sm md:text-core">OVERLINE</p>
             <p className="dark:text-white text-2xl md:text-3xl font-bold">Most popular live auctions</p>
@@ -85,12 +118,19 @@ class PopularSales extends Component {
             <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Games</p>
             <p className="py-1 px-3 md:px-4 text-xs md:text-core font-medium border-2 border-solid border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-900">Music</p>
           </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
-          {this.state.popularSales.map(Item => {
+        </motion.div>
+        <motion.div 
+        ref={ref}
+        variants={SlideVariant}
+        initial="hidden"
+        animate={control}    
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between items-center">
+          {popularSales.map(Item => {
           return (
-            <div key={Item.id}>
-              <div className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
+            <div
+              key={Item.id}>
+              <div 
+              className="flex flex-col justify-center items-start mx-4 my-4 lg:my-12">
                 <img src={Item.imgUrl} alt={Item.name} style={{
                   width: '100%',
                   height: '100%',
@@ -127,13 +167,12 @@ class PopularSales extends Component {
             </div>
           );
         })}
-        </div>
+        </motion.div>
         <div className="w-full flex flex-col justify-center items-center">
-          <button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-900 dark:border-gray-700 dark:text-white">Show me more</button>
+          <Link to='/auctions'><button className="text-lg text-primary font-medium my-4 py-2 px-6 rounded-lg border-2 border-solid border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-900 dark:border-gray-700 dark:text-white">Show me more</button></Link>
         </div>
       </div>
     )
   }
-}
 
 export default PopularSales;

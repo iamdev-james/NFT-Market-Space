@@ -6,7 +6,7 @@ import { GOOGLE_AUTH } from '../../hooks/AuthHooks/googleAuth';
 const SIGN_UP = () => {
   return (
     <main>
-      <div className='mx-4 sm:mx-0 px-10 md:px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
+      <div className='mx-4 sm:mx-0 px-6 md:px-16 pt-20 pb-12 rounded-xl bg-primary text-center text-white'>
         <div>
           <p className='text-4xl font-bold pb-5'>Sign In</p>
           <p className='text-sm font-medium pb-12'>Welcome back, please select a suitable login option below</p>

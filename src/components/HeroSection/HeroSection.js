@@ -1,5 +1,9 @@
-// import { Component } from "react";
+import { useEffect } from "react";
 import { FaSearch } from 'react-icons/fa'
+
+// Using framer and react observeble to check when element is in view port
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Use dark hook to get current
 import useDark from '../../hooks/useDark';
@@ -23,6 +27,31 @@ import DarkLittleCircles from '../../assets/images/DarkLittleCircles.svg'
 // import DarkGradientFade from '../../assets/images/DarkGradientFade.svg'
 
 function HeroSection() {
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+    
+    // Animation parameters
+    const boxVariant = {
+      visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+      hidden: { opacity: 0, scale: 0 }
+    }
+    const SlideLeftVariant = {
+      visible: {
+        x: 0, opacity: 1, scale: 1, transition: { duration: 0.45}
+      },
+      hidden: {
+        x: -150, opacity: 0.8, scale: 0.5
+      }
+    }
+
     const searchBar = {
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 25px 75px rgba(6, 7, 20, 0.1)',
@@ -48,24 +77,34 @@ function HeroSection() {
         <div className="2xl:max-h-primary lg:h-screen md:h-phero h-screen flex flex-col justify-around items-center mt-32">
           <div className="h-3/6 md:h-3/5 lg:h-3/5 flex flex-col justify-between items-center lg:z-100 z-1">
             <div className="flex flex-col justify-between items-center">
-              <div>
+              <motion.div
+              ref={ref}
+              variants={SlideLeftVariant}
+              initial="hidden"
+              animate={control}    
+              >
                 <p className="text-lg text-primary">NON FUNGIBLE TOKEN</p>
-              </div>
-              <div className="flex flex-col justify-center items-center">
+              </motion.div>
+              <motion.div 
+              ref={ref}
+              variants={boxVariant}
+              initial="hidden"
+              animate={control}    
+              className="flex flex-col justify-center items-center">
                 <div className="flex flex-row justify-end items-center mb-12">
                   <p className="lg:text-10xl md:text-6xl text-5xl font-bold dark:text-white">A new NFT</p>
-                  <img src={HeroFrame1} alt='Frame1' className='scale-50 lg:scale-100' />
+                  <img src={HeroFrame1} alt='Frame1' className='animate-bounce scale-50 lg:scale-100' />
                 </div>
                 <div className="flex flex-row justify-start items-center my-10 -mt-10 md:ml-16">
-                  <img src={HeroFrame2} alt="Frame2" className='scale-50 lg:scale-100' />
+                  <img src={HeroFrame2} alt="Frame2" className='animate-bounce scale-50 lg:scale-100' />
                   <p className="dark:text-white lg:text-10xl md:text-6xl text-5xl font-bold">Experience</p>
                 </div>
-              </div>
+              </motion.div>
               <div>
                 <p className="text-primary text-lg">Discover, collect and sell</p>
               </div>
             </div>
-            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center lg:z-1 z-100">
+            <div style={searchBar} className="w-msearchBar md:w-psearchBar lg:w-searchBar lg:h-searchBar h-msearchBar text-sm lg:text-lg flex flex-row justify-around items-center lg:z-1 z-90">
               <input type="search" placeholder="Items, collections and creators" style={{
                 outline: 'none',
               }} className="w-2/3 md:w-1/2 h-full" />

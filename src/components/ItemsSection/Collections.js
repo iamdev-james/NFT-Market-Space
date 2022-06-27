@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Slider from "react-slick";
 // Time formatter to format expiration time
-import Time from 'react-time-format';
+import Countdown from 'react-countdown';
 
 // Importing react icons
 import { BsClockHistory } from 'react-icons/bs'
@@ -57,7 +57,7 @@ let settings = {
 
 const Collections = props => {
   return (
-    <div className="dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
+    <div className="mt-40 md:mt-16 lg:mt-0 dark:bg-darkMode max-w-body -mt-32 md:mt-0 pt-8 md:pt-10 lg:pt-40">
     <p className="dark:text-white text-center text-3xl font-bold mb-12">Latest live auctions</p>
     <Slider {...settings}>
       {props.NFTs.NFTs.map(Item => {
@@ -75,7 +75,7 @@ const Collections = props => {
                 <p className="text-core px-3 bg-gray-200 rounded-lg text-blue-600 font-medium dark:bg-gray-900">{ parseFloat(Item.payment_token_contract.eth_price * Math.random()).toFixed(2) } Eth</p>
               </div>
               <div className="flex flex-row justify-start items-center font-medium dark:text-primary">
-                <BsClockHistory className="mr-3" /> <Time className="mr-2" value={ new Date(Item.expiration_time) } format="hh:mm:ss" /> left
+                <BsClockHistory className="mr-3" /> <Countdown className="mr-2" date={Date.now() + Item.expiration_time} /> left
               </div>
               <div className="mt-8 mb-3 bg-[#E2E2ED] dark:bg-gray-800" style={{
                 height: '1px',

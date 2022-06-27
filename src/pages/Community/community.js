@@ -20,7 +20,7 @@ export const Community = () => {
         <li className='bg-custom dark:bg-primary'></li>
         <li className='bg-custom dark:bg-primary'></li>
       </ul>
-      <div className='w-full flex flex-col justify-start items-center ItemCont absolute z-100 h-full mx-auto'>
+      <div className='w-full flex flex-col justify-start items-center ItemCont 2xl:relative 2xl:mt-20 absolute z-90 md:z-100 h-full mx-auto'>
         <CircleLoader
           meshColor={"#6366F1"}
           lightColor={"#E0E7FF"}
