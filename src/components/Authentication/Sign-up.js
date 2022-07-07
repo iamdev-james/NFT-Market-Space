@@ -1,6 +1,7 @@
-import { FaHeading } from 'react-icons/fa';
+// import { FaHeading } from 'react-icons/fa';
 
 import { GOOGLE_AUTH } from '../../hooks/AuthHooks/googleAuth';
+import  MetaMaskAuth  from './Metamask/index'
 
 
 const SIGN_UP = () => {
@@ -16,10 +17,7 @@ const SIGN_UP = () => {
             <GOOGLE_AUTH />
           </div>
           <div className='mt-6'>
-            <button className='px-7 py-3 rounded-xl bg-secondary flex flex-row justify-center items-center text-black text-sm md:text-lg font-bold md:font-medium hover:bg-gray-300'>
-              <FaHeading className='mr-4 text-2xl font-bold text-red-500' />
-                Sign in with MetaMask
-            </button>
+            <MetaMaskAuth />
           </div>
         </div>
       <div className='pt-12'>
