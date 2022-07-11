@@ -5,6 +5,9 @@ import { Route, Routes } from 'react-router-dom'
 // Importing Axios for Opensea API calls
 import axios from "axios"
 
+// Toast Libraries
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 // CSS files for carousel
 import "slick-carousel/slick/slick.css";
@@ -53,6 +56,7 @@ class App extends Component {
   render () {
     return this.state.NFTs ? (
       <main className="overflow-x-hidden dark:bg-darkMode">
+        <ToastContainer />
         <Header />
         <Routes>
           <Route path='/' element = { <HomePage  NFTs= {this.state.NFTs} /> } />

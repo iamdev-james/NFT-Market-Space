@@ -1,5 +1,5 @@
 // Importing the Auth component Modal
-import SIGN_UP from '../../components/Authentication/Sign-up';
+import SIGN_IN from './SignIn';
 
 // User Profile
 import { UserProfile } from './profile';
@@ -8,12 +8,12 @@ import { UserProfile } from './profile';
 import Popup from 'reactjs-popup';
 
 // User Obj
-const userObj = JSON.parse(window.sessionStorage.getItem('AuthInfo'));
+const Payload = JSON.parse(window.sessionStorage.getItem('Payload'));
 
 
 export const Account = () => {
   return (
-    userObj?
+    Payload?
     <main>
       <Popup trigger={ 
         <button className='py-80 px-83 bg-primary rounded-header-btn text-lg text-white ml-2 font-medium'>My Account</button>
@@ -28,7 +28,7 @@ export const Account = () => {
       <Popup trigger={ 
         <button className='py-80 px-83 bg-primary rounded-header-btn text-lg text-white ml-2 font-medium'>My Account</button>
       } modal>
-        <SIGN_UP />
+        <SIGN_IN />
       </Popup>
     </main>
   )

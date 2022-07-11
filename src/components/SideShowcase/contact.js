@@ -1,8 +1,7 @@
 import Popup from "reactjs-popup";
 
 // React toastify for messages
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { SuccessToastify } from "../../Loaders/Toastify";
 
 const closeBtn = {
   cursor: 'pointer',
@@ -19,7 +18,6 @@ const closeBtn = {
 export const Contact = () => {
   return (
     <main>
-      <ToastContainer />
        <Popup
           trigger={<button className='my-6 lg:my-0 py-78 px-82 rounded-header-btn text-lg border-2 border-solid border-primary text-primary font-medium'>Contact</button>}
           modal
@@ -58,15 +56,7 @@ export const Contact = () => {
                    type="submit" 
                    value="Submit"
                    onClick={(event) => {
-                    toast.success('Form response has beeen submitted', {
-                      position: "top-right",
-                      autoClose: 3000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      });
+                    SuccessToastify('Form response has been submitted')
                     event.preventDefault();
                     close();
                   }} />
