@@ -1,5 +1,8 @@
 import { useGoogleLogin } from '@react-oauth/google';
 
+// Firebase Validations
+import { LoginValidation } from '../../utils/firebase.utils';
+
 // React toastify for messages
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,25 +26,6 @@ export const GOOGLE_AUTH = () => {
      })
      .then(res => {
       storeUserData(res.data)
-      toast.success('Login Successful', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-      toast('Redirecting...', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-      setTimeout(window.location.reload(), 5000);
      })
      .catch(error => {
       console.log(error);
@@ -58,12 +42,8 @@ export const GOOGLE_AUTH = () => {
    }
   
   // Store user data upon confirmation
-   const storeUserData = (userInfo) => {
-     const authInfo = {
-       userIsLoggedIn: true,
-       userInfo
-     };
-     window.sessionStorage.setItem('AuthInfo', JSON.stringify(authInfo));
+   const storeUserData = (payload) => {
+      LoginValidation(payload)
   }
   return (
     <main>

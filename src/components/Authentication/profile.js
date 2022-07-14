@@ -4,43 +4,25 @@ import { FaArrowRight } from "react-icons/fa"
 import { googleLogout } from "@react-oauth/google";
 
 // React toastify for messages
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { SuccessToastify, NormalToastify } from "../../Loaders/Toastify";
 
-const userObj = JSON.parse(window.sessionStorage.getItem('AuthInfo'))
+const Payload = JSON.parse(window.sessionStorage.getItem('Payload'))
 
 export const UserProfile = () => {
   let logoutUser = () => {
     googleLogout();
-    window.sessionStorage.removeItem('AuthInfo');
-    toast.success('Logout Successful', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
-    toast('Redirecting...', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
+    window.sessionStorage.removeItem('Payload');
+    SuccessToastify('Logout Sucessful')
+    NormalToastify('Redirecting...')
     setTimeout(window.location.reload(), 5000);
   }
-  return userObj.userInfo? (
+  return Payload.userAuth? (
     <main>
-      <ToastContainer />
       <div className="bg-white pt-12 pb-5 px-6 rounded-xl text-center leading-loose shadow-2xl">
-        <img src={userObj.userInfo.picture } alt={userObj.userInfo.given_name } className="m-auto w-20 h-20 rounded-full" />
+        <img src={Payload.userAuth.picture } alt={Payload.userAuth.given_name } className="m-auto w-20 h-20 rounded-full" />
         <p className="text-xl font-bold py-3">
-          {userObj.userInfo.name }</p>
-        <p className="text-sm font-medium">{userObj.userInfo.email }</p>
+          {Payload.userAuth.name }</p>
+        <p className="text-sm font-medium">{Payload.userAuth.email }</p>
         <p className="text-sm font-medium">LoggedIn: true</p>
         <div className="bg-[#E2E2ED] dark:bg-gray-300 my-4" style={{
           height: '1px',
@@ -53,11 +35,10 @@ export const UserProfile = () => {
   ) :
   (
     <main>
-      <ToastContainer />
       <div className="bg-white pt-12 pb-5 px-6 rounded-xl text-center leading-loose shadow-2xl">
         <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png" alt="userimage" className="m-auto w-20 h-20 rounded-full" />
         <p className="text-xl font-bold py-3">
-          { userObj.substring(0, 9)}…{userObj.substring(userObj.length - 9) }</p>
+          { Payload.substring(0, 9)}…{Payload.substring(Payload.length - 9) }</p>
         <p className="text-sm font-medium">LoggedIn: true</p>
         <div className="bg-[#E2E2ED] dark:bg-gray-300 my-4" style={{
           height: '1px',
